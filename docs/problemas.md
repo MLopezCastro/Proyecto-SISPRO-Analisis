@@ -10,7 +10,7 @@
     ```
   - Confirmamos que `TablaVinculadaUNION` es una vista y accedimos a su contenido.
  
-  - ![image](https://github.com/user-attachments/assets/80e80607-0390-4d3c-b92f-6152c6fbf460)
+![image](https://github.com/user-attachments/assets/80e80607-0390-4d3c-b92f-6152c6fbf460)
 
 
 ## 2. Relación entre tablas `ConCubo` y `TablaVinculadaUNION`

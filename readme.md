@@ -30,3 +30,10 @@ Este proyecto tiene como objetivo resolver problemas relacionados con el cálcul
 - [ ] Relacionar las tablas y preparar una tabla consolidada.
 - [ ] Crear visualizaciones en Power BI.
 
+----------------
+Objetivo general: Mejorar el análisis de tiempos y secuencias de órdenes de trabajo (OT)
+El problema que identificamos está relacionado con:
+
+Tiempos de preparación que no reflejan la realidad cuando las órdenes comparten configuraciones similares.
+Inconsistencias en los reportes generados por Power BI debido a estas discrepancias.
+Escalabilidad: Cómo crear un sistema flexible para incluir otras máquinas y sus variables específicas.

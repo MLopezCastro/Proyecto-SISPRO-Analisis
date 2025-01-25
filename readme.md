@@ -49,9 +49,9 @@ El problema que identificamos está relacionado con:
 
 ### Las columnas clave son:
 
-En ConCubo: ID (identificador de la orden de trabajo).
+1-En ConCubo: ID (identificador de la orden de trabajo).
 
-En TablaVinculadaUNION: OP (orden de trabajo) y saccod1 (código de sacabocado).
+2-En TablaVinculadaUNION: OP (orden de trabajo) y saccod1 (código de sacabocado).
 
 Ahora necesitamos avanzar hacia un análisis más profundo y establecer un flujo de trabajo para abordar el problema.
 

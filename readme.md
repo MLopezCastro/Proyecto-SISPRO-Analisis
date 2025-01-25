@@ -39,3 +39,21 @@ El problema que identificamos está relacionado con:
 2-Inconsistencias en los reportes generados por Power BI debido a estas discrepancias.
 
 3-Escalabilidad: Cómo crear un sistema flexible para incluir otras máquinas y sus variables específicas.
+
+-----------
+1. Resumen de lo que ya hicimos
+
+Tenemos las tablas clave: ConCubo y TablaVinculadaUNION.
+
+Sabemos que saccod1 (código de sacabocado) es importante para discriminar órdenes en la máquina 201.
+
+Las columnas clave son:
+
+En ConCubo: ID (identificador de la orden de trabajo).
+
+En TablaVinculadaUNION: OP (orden de trabajo) y saccod1 (código de sacabocado).
+
+Ahora necesitamos avanzar hacia un análisis más profundo y establecer un flujo de trabajo para abordar el problema.
+
+------
+

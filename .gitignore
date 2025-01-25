@@ -1,0 +1,11 @@
+# Archivos de respaldo de bases de datos
+*.bak
+*.mdf
+*.ldf
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Archivos de Power BI
+*.pbix

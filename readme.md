@@ -64,3 +64,6 @@ Paso 1: Explorar y entender las tablas de datos
 Antes de aplicar transformaciones o filtros, debemos analizar a fondo las tablas principales para asegurarnos de que tenemos toda la información relevante.
 
 Consulta y descripción de las tablas:
+
+![image](https://github.com/user-attachments/assets/15870bd7-3477-4e9e-bd66-bafeb35e4160)
+

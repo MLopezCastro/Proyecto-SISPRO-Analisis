@@ -45,9 +45,9 @@ El problema que identificamos está relacionado con:
 
 ## Tenemos las tablas clave: ConCubo y TablaVinculadaUNION.
 
-# Sabemos que saccod1 (código de sacabocado) es importante para discriminar órdenes en la máquina 201.
+### Sabemos que saccod1 (código de sacabocado) es importante para discriminar órdenes en la máquina 201.
 
-# Las columnas clave son:
+### Las columnas clave son:
 
 En ConCubo: ID (identificador de la orden de trabajo).
 

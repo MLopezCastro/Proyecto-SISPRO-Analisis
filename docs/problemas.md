@@ -24,3 +24,4 @@
     INNER JOIN TablaVinculadaUNION v
     ON c.ID = v.OP;
     ```
+![image](https://github.com/user-attachments/assets/96da67db-4eb7-43f0-af7e-0bd8163bc8a3)

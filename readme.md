@@ -57,3 +57,10 @@ Ahora necesitamos avanzar hacia un análisis más profundo y establecer un flujo
 
 ------
 
+## 2. Plan de acción: Siguiente etapa
+
+Paso 1: Explorar y entender las tablas de datos
+
+Antes de aplicar transformaciones o filtros, debemos analizar a fondo las tablas principales para asegurarnos de que tenemos toda la información relevante.
+
+Consulta y descripción de las tablas:

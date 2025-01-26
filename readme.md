@@ -424,4 +424,58 @@ Qué estamos haciendo aquí:
 
 ![image](https://github.com/user-attachments/assets/f706522a-97fb-47b8-9152-533270d61eee)
 
+Los resultados del Enfoque 2 parecen más consistentes y prácticos para este caso, dado que:
+
+-El enfoque 2 agrupa directamente por OP y saccod1_int:
+
+Esto te da un resumen claro de cuántas órdenes (TotalOrdenes) comparten una misma configuración (saccod1_int) dentro de un mismo OP.
+
+Además, las columnas FechaInicio y FechaFin te proporcionan un rango de tiempo consolidado para esas órdenes, lo cual es ideal para el análisis de tiempos de preparación.
+
+El enfoque 1, basado en secuencias (MISMA_SECUENCIA/NUEVA_SECUENCIA), no agrega mucho valor en este caso:
+
+Dado que las fechas no varían dentro de cada grupo, las secuencias no aportan una segmentación significativa.
+
+Termina siendo más complejo sin una ganancia clara.
+
+## Conclusión
+
+El Enfoque 2 es el mejor camino por ahora, ya que ofrece un análisis claro y manejable de configuraciones compartidas y su impacto en la producción.
+
+-----------
+
+## Próximos pasos con el enfoque 2
+
+1. Validar los resultados obtenidos
+
+Asegúrate de que los resultados del Enfoque 2 sean consistentes en todos los registros:
+
+-saccod1_int: Verifica que los valores sean relevantes y correctos (por ejemplo, sin valores nulos o erróneos).
+
+-Fechas: Asegúrate de que FechaInicio y FechaFin reflejen correctamente el rango de las órdenes.
+
+2. Exportar los resultados para análisis adicional
+
+Con los resultados agrupados por OP y saccod1_int, puedes exportar estos datos para visualizarlos o analizarlos en Power BI o Python:
+
+![image](https://github.com/user-attachments/assets/363dadd3-0591-41d8-b90a-afec8aa32269)
+
+![image](https://github.com/user-attachments/assets/0e54c11f-14a7-4f76-a0f7-6130f5c472e1)
+
+![image](https://github.com/user-attachments/assets/04a6344c-2475-4ea4-bfeb-713ffb7486b9)
+
+![image](https://github.com/user-attachments/assets/a4c59031-a1f4-4125-b094-1fb3b2915f88)
+
+![image](https://github.com/user-attachments/assets/ed7edcff-6ed8-49a9-8bfe-757ea3849549)
+
+![image](https://github.com/user-attachments/assets/c82331a5-09f0-4b66-ac72-45ed014b1d95)
+
+
+
+
+
+
+
+
+
 

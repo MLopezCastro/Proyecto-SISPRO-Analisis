@@ -326,4 +326,23 @@ Ahora tenemos información combinada entre ambas tablas, incluyendo:
 
 --------------------------------------
 
+## Próximos pasos
+
+Con estos resultados, avanzaremos al siguiente nivel del análisis: identificar secuencias de órdenes que comparten la misma configuración (saccod1_int) y calcular tiempos optimizados.
+
+## Paso 1: Identificar secuencias consecutivas con el mismo saccod1_int
+
+Consulta para calcular secuencias consecutivas: Utilizaremos una ventana en SQL para determinar si una orden comparte la misma configuración (saccod1_int) con la anterior.
+
+![image](https://github.com/user-attachments/assets/a1bb38fd-5164-44fb-b3f9-f1ff19e9f52f)
+
+![image](https://github.com/user-attachments/assets/d8281384-0ece-4d39-8562-28fdefeca07b)
+
+*Propósito:
+
+-Identificar si una orden pertenece a la misma secuencia que la anterior.
+
+-Etiquetar cada orden como MISMA_SECUENCIA o NUEVA_SECUENCIA.
+
+
 

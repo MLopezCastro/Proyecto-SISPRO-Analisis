@@ -191,7 +191,8 @@ Consulta para analizar saccod1:
 
 ![image](https://github.com/user-attachments/assets/9b47e05a-1558-472a-b233-ae15399afb42)
 
-![image](https://github.com/user-attachments/assets/945aa76f-5c31-477b-a169-74861486cd58)
+![image](https://github.com/user-attachments/assets/d55567e1-bd8d-4bb2-8057-611ac4998bbe)
+
 
 
 

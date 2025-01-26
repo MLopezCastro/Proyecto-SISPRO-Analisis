@@ -75,21 +75,22 @@ Consulta y descripción de las tablas:
 
 ---------------------
 
-Paso 1: Explorar y entender las tablas
+## Paso 1: Explorar y entender las tablas
 
 1. Revisemos las columnas clave identificadas:
 
-Tabla ConCubo:
+## Tabla ConCubo:
 
-ID: Identificador de la orden de trabajo (clave principal).
+*ID: Identificador de la orden de trabajo (clave principal).
 
-Columnas relevantes para análisis: CantidadHoras, Estado, Motivo, Planta, entre otras.
+*Columnas relevantes para análisis: CantidadHoras, Estado, Motivo, Planta, entre otras.
 
-Tabla TablaVinculadaUNION:
+## Tabla TablaVinculadaUNION:
 
-OP: Orden de Producción, parece ser un identificador que podemos relacionar con ID de ConCubo.
+*OP: Orden de Producción, parece ser un identificador que podemos relacionar con ID de ConCubo.
 
-saccod1: Código de sacabocado, clave para identificar configuraciones compartidas.
+*saccod1: Código de sacabocado, clave para identificar configuraciones compartidas.
+
 
 Columnas adicionales como descripcionProducto, cantidad, fechaEntrega.
 

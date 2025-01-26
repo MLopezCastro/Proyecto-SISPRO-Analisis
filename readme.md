@@ -129,6 +129,21 @@ Ahora que sabemos que podemos trabajar desde 2013, ajustemos las consultas para 
 
 ![image](https://github.com/user-attachments/assets/05af266a-53d9-4007-892e-baf9264c5135)
 
+--------------
+
+## 1. Verificar y ordenar las fechas en TablaVinculadaUNION
+
+Como las fechas en fechaEntrega parecen estar desordenadas, primero confirmemos el rango de fechas exacto y ordenemos los datos para explorarlos mejor:
+
+![image](https://github.com/user-attachments/assets/3f18c534-41d7-4eac-91d0-b4a22f05fb6d)
+
+![image](https://github.com/user-attachments/assets/651d405a-dacd-4d59-a7bf-d8b85f9d8a5a)
+
+Esto nos dará una idea clara de:
+
+-Desde cuándo y hasta cuándo existen registros en TablaVinculadaUNION.
+
+-Si hay fechas fuera del rango esperado o datos inconsistentes.
 
 
 

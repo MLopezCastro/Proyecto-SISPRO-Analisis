@@ -165,6 +165,15 @@ Vamos a hacer lo mismo para los registros de TablaVinculadaUNION basándonos en 
 
 ![image](https://github.com/user-attachments/assets/9f35d222-7a94-4639-85a1-3808d1db31c9)
 
+----------
+
+## Paso 2: Revisar la relación entre ID y OP
+
+Queremos confirmar si ID (de ConCubo) y OP (de TablaVinculadaUNION) están relacionados correctamente después del filtrado.
+
+Consulta para verificar coincidencias:
+
+![image](https://github.com/user-attachments/assets/2cb8ae90-f1ba-4c9f-8073-18aab536e994)
 
 
 

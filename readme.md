@@ -147,8 +147,23 @@ Esto nos dará una idea clara de:
 
 ![image](https://github.com/user-attachments/assets/c31b2e41-335d-4e83-ad7f-664b0e33c23d)
 
+-------
 
+## Paso 1: Filtrar registros desde 2014 en adelante
 
+Para trabajar con datos desde 2014, ajustemos las consultas para filtrar ambos conjuntos de datos:
+
+## 1. Filtrar en ConCubo desde 2014
+
+Queremos incluir solo las órdenes de trabajo (OT) desde 2014:
+
+![image](https://github.com/user-attachments/assets/7426d06e-74ed-4b4f-a1fa-3b990fcce089)
+
+## 2. Filtrar en TablaVinculadaUNION desde 2014
+
+Vamos a hacer lo mismo para los registros de TablaVinculadaUNION basándonos en la columna
+
+![image](https://github.com/user-attachments/assets/9f35d222-7a94-4639-85a1-3808d1db31c9)
 
 
 

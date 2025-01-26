@@ -304,7 +304,26 @@ Vemos que los registros en común comienzan en Octubre de 2021
 
 -------------------
 
+## ¿Qué hemos logrado hasta ahora?
 
+-Filtramos valores válidos de saccod1:
 
+-Descubrimos que algunos valores no eran numéricos, y ahora solo trabajamos con valores que se pueden convertir a int.
+
+-Relacionamos ConCubo y TablaVinculadaUNION:
+
+-Confirmamos que las columnas ID y OP están correctamente relacionadas para el rango de fechas y valores filtrados.
+
+-Obtenemos datos útiles para el análisis:
+
+Ahora tenemos información combinada entre ambas tablas, incluyendo:
+
+*Año y mes de inicio (AnoInicio, MesInicio).
+
+*Configuración identificada por saccod1_int.
+
+*Fecha de entrega.
+
+--------------------------------------
 
 

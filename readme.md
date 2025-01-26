@@ -96,7 +96,7 @@ Columnas adicionales como descripcionProducto, cantidad, fechaEntrega.
 
 Nota inicial:
 
-ConCubo tiene datos desde 2013, mientras que TablaVinculadaUNION empieza en 2018. Esto significa que solo podremos analizar las órdenes desde 2018 en adelante, ya que es cuando ambas tablas tienen datos.
+ConCubo tiene datos desde 2013, mientras que TablaVinculadaUNION empieza en 2009. Esto significa que solo podremos analizar las órdenes desde 2009 en adelante, ya que es cuando ambas tablas tienen datos.
 
 ----------------
 

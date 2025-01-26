@@ -181,5 +181,17 @@ Consulta para verificar coincidencias:
 
 ![image](https://github.com/user-attachments/assets/d62d29f8-0ff8-411e-aa4d-4d7192b5b072)
 
+-------------
+
+## Paso 3: Analizar saccod1 para configuraciones compartidas
+
+Como sabemos que saccod1 es clave para la máquina 201, exploremos su distribución para ver qué configuraciones se repiten.
+
+Consulta para analizar saccod1:
+
+![image](https://github.com/user-attachments/assets/9b47e05a-1558-472a-b233-ae15399afb42)
+
+![image](https://github.com/user-attachments/assets/945aa76f-5c31-477b-a169-74861486cd58)
+
 
 

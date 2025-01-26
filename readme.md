@@ -67,3 +67,6 @@ Consulta y descripción de las tablas:
 
 ![image](https://github.com/user-attachments/assets/15870bd7-3477-4e9e-bd66-bafeb35e4160)
 
+![image](https://github.com/user-attachments/assets/2e47793b-a202-42cd-94a6-4c0dce74ad49)
+
+

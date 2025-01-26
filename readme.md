@@ -344,5 +344,40 @@ Consulta para calcular secuencias consecutivas: Utilizaremos una ventana en SQL 
 
 -Etiquetar cada orden como MISMA_SECUENCIA o NUEVA_SECUENCIA.
 
+## Lo que observamos en los datos:
+
+Hay registros con MISMA_SECUENCIA y NUEVA_SECUENCIA:
+
+Esto significa que la lógica para detectar secuencias está funcionando parcialmente.
+
+Sin embargo, en algunos casos, para una misma combinación de ID, OP y saccod1_int, todavía se marca como NUEVA_SECUENCIA, lo cual podría no ser esperado.
+
+Problema potencial:
+
+Si el valor de saccod1_int, OP o fechaEntrega es constante dentro de un grupo, pero SQL considera que hay una "nueva secuencia," podríamos estar enfrentando uno de estos escenarios:
+
+-Las fechas de entrega son todas iguales, lo que podría estar confundiendo la lógica.
+
+-Falta de orden consistente en los datos, lo que hace que las secuencias no se calculen correctamente.
+
+----------
+
+## Diagnóstico: Verificar los datos
+
+Antes de ajustar la lógica, confirmemos lo siguiente:
+
+1. ¿Las fechas de entrega (fechaEntrega) tienen variación?
+
+![image](https://github.com/user-attachments/assets/c3eec540-8de8-4c97-8f89-a32fbd298cdd)
+
+![image](https://github.com/user-attachments/assets/9dbb7b9e-5b5d-478d-8f78-e8922ee60929)
+
+Resultado esperado:
+
+-Si FechasUnicas = 1, entonces todas las fechas son iguales para ese grupo, y eso podría estar causando inconsistencias en las secuencias.
+
+-Si hay varias fechas únicas, entonces el cálculo de secuencias es válido.
+
+
 
 

@@ -127,6 +127,9 @@ Ahora que sabemos que podemos trabajar desde 2013, ajustemos las consultas para 
 
 ![image](https://github.com/user-attachments/assets/9f33f2c1-c1a4-4bd5-aee5-3db681fb0b2e)
 
+![image](https://github.com/user-attachments/assets/05af266a-53d9-4007-892e-baf9264c5135)
+
+
 
 
 

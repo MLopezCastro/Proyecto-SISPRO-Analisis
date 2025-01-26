@@ -112,6 +112,9 @@ Consulta de conteo de registros por tabla:
 
 ![image](https://github.com/user-attachments/assets/b2bf4895-2021-4e75-bf9c-7b6f5b0cc5e4)
 
+![image](https://github.com/user-attachments/assets/b61a17d7-a0ee-4e9a-9189-ee8459a81829)
+
+
 
 
 

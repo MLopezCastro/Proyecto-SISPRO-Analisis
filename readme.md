@@ -114,6 +114,18 @@ Consulta de conteo de registros por tabla:
 
 ![image](https://github.com/user-attachments/assets/b61a17d7-a0ee-4e9a-9189-ee8459a81829)
 
+------------
+
+## Paso 1: Ajustar el rango de fechas
+
+Ahora que sabemos que podemos trabajar desde 2013, ajustemos las consultas para asegurarnos de que ambas tablas coincidan en su rango de análisis:
+
+
+## 1. Filtrar registros relevantes en ambas tablas
+
+## Filtrar datos en ConCubo desde 2013 en adelante:
+
+![image](https://github.com/user-attachments/assets/9f33f2c1-c1a4-4bd5-aee5-3db681fb0b2e)
 
 
 

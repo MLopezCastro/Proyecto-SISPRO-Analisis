@@ -159,11 +159,15 @@ Queremos incluir solo las órdenes de trabajo (OT) desde 2014:
 
 ![image](https://github.com/user-attachments/assets/7426d06e-74ed-4b4f-a1fa-3b990fcce089)
 
+![image](https://github.com/user-attachments/assets/89094511-dd68-46e4-a5c2-b3e2df9d3395)
+
 ## 2. Filtrar en TablaVinculadaUNION desde 2014
 
 Vamos a hacer lo mismo para los registros de TablaVinculadaUNION basándonos en la columna
 
 ![image](https://github.com/user-attachments/assets/9f35d222-7a94-4639-85a1-3808d1db31c9)
+
+![image](https://github.com/user-attachments/assets/57cb80be-e996-451e-ac01-6fa4312da331)
 
 ----------
 
@@ -175,6 +179,7 @@ Consulta para verificar coincidencias:
 
 ![image](https://github.com/user-attachments/assets/2cb8ae90-f1ba-4c9f-8073-18aab536e994)
 
+![image](https://github.com/user-attachments/assets/d62d29f8-0ff8-411e-aa4d-4d7192b5b072)
 
 
 

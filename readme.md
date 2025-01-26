@@ -71,7 +71,7 @@ Consulta y descripción de las tablas:
 
 *Tabla Concubo: registros desde 2013
 
-*Tabla TablaVinculadaUnion: registros desde 2018
+*Tabla TablaVinculadaUnion: registros desde 2009
 
 ---------------------
 

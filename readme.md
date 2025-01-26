@@ -69,4 +69,33 @@ Consulta y descripción de las tablas:
 
 ![image](https://github.com/user-attachments/assets/2e47793b-a202-42cd-94a6-4c0dce74ad49)
 
+*Tabla Concubo: registros desde 2013
+
+*Tabla TablaVinculadaUnion: registros desde 2018
+
+---------------------
+
+Paso 1: Explorar y entender las tablas
+
+1. Revisemos las columnas clave identificadas:
+
+Tabla ConCubo:
+
+ID: Identificador de la orden de trabajo (clave principal).
+
+Columnas relevantes para análisis: CantidadHoras, Estado, Motivo, Planta, entre otras.
+
+Tabla TablaVinculadaUNION:
+
+OP: Orden de Producción, parece ser un identificador que podemos relacionar con ID de ConCubo.
+
+saccod1: Código de sacabocado, clave para identificar configuraciones compartidas.
+
+Columnas adicionales como descripcionProducto, cantidad, fechaEntrega.
+
+Nota inicial:
+
+ConCubo tiene datos desde 2013, mientras que TablaVinculadaUNION empieza en 2018. Esto significa que solo podremos analizar las órdenes desde 2018 en adelante, ya que es cuando ambas tablas tienen datos.
+
+
 

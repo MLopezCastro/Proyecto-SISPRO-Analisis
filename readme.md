@@ -98,5 +98,23 @@ Nota inicial:
 
 ConCubo tiene datos desde 2013, mientras que TablaVinculadaUNION empieza en 2018. Esto significa que solo podremos analizar las órdenes desde 2018 en adelante, ya que es cuando ambas tablas tienen datos.
 
+----------------
+
+## 2. Analicemos el volumen de datos
+
+Antes de proceder a realizar filtros, revisemos cuántos registros tienen estas tablas:
+
+Consulta de conteo de registros por tabla:
+
+![image](https://github.com/user-attachments/assets/e56aed2e-b9f7-4b8c-959a-577fb91f1b17)
+
+![image](https://github.com/user-attachments/assets/406cfdba-b28a-484f-96f8-dcbdd911fa13)
+
+
+
+
+
+
+
 
 

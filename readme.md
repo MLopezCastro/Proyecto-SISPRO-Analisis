@@ -195,13 +195,15 @@ Consulta para analizar saccod1:
 
 ----------------
 
-## Paso 4: Relacionar datos específicos de la máquina 201
+## Paso 4: Análisis de saccod1 para configuraciones compartidas (Máquina 201)
 
-Si queremos avanzar directamente con la máquina 201 (como es el caso prioritario), filtramos solo los datos relevantes para esta máquina.
+Objetivo: Entender la distribución de saccod1 para identificar patrones y configuraciones compartidas en la máquina 201.
 
-Consulta para extraer datos de la máquina 201 en ConCubo:
-
-?????
+Consulta de valores únicos de saccod1:
 
 
+![image](https://github.com/user-attachments/assets/b140de59-abac-460d-b3c2-06f7164fe148)
+
+
+![image](https://github.com/user-attachments/assets/b233e8a5-1197-46e9-a354-9ea664d1769f)
 

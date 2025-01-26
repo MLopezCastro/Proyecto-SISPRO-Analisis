@@ -378,6 +378,50 @@ Resultado esperado:
 
 -Si hay varias fechas únicas, entonces el cálculo de secuencias es válido.
 
+El hecho de que FechasUnicas siempre sea 1 significa que, para cada combinación de ID, OP y saccod1_int, todas las órdenes tienen exactamente la misma fecha de entrega (fechaEntrega). Esto explica por qué nuestra lógica para detectar secuencias puede no estar 
 
+funcionando como se esperaba: no hay variación en las fechas dentro de cada grupo, lo que hace difícil calcular cambios entre registros consecutivos.
+
+Causa del problema
+
+Cuando todas las filas tienen la misma fecha dentro de un grupo, la función LAG que usamos para calcular secuencias no puede basarse en un orden natural para distinguir registros consecutivos. Esto da lugar a resultados inconsistentes, como asignar NUEVA_SECUENCIA 
+
+cuando en realidad podría ser parte de una misma secuencia.
+
+## Opciones para resolverlo
+
+1. Incorporar otra columna como criterio adicional
+
+Si las fechas no varían, podemos incluir otra columna en la lógica de ordenamiento para garantizar que los registros se procesen correctamente. Una buena opción sería usar la columna ID, ya que parece ser única en cada registro.
+
+Lógica ajustada:
+
+Usaremos tanto fechaEntrega como ID para determinar el orden:
+
+![image](https://github.com/user-attachments/assets/42c9f3b3-dbd7-41d2-8984-03ce34635149)
+
+Qué estamos haciendo aquí:
+
+Usamos fechaEntrega como criterio principal y ID como criterio secundario para ordenar los registros dentro de cada grupo.
+
+Esto asegura que SQL procese los registros en un orden claro y consistente, incluso si las fechas son idénticas.
+
+![image](https://github.com/user-attachments/assets/8d6bd228-10ce-432f-a8bb-addef41c7ebb)
+
+## 2. Agrupar directamente por saccod1_int y OP
+
+Si no hay un criterio claro para distinguir registros dentro de un grupo, podríamos considerar simplemente agrupar los registros que comparten el mismo OP y saccod1_int sin intentar calcular secuencias.
+
+Consulta alternativa:
+
+![image](https://github.com/user-attachments/assets/004797fa-a903-413e-b7fa-e73c8483e0f7)
+
+Qué estamos haciendo aquí:
+
+-Agrupamos por OP y saccod1_int para obtener una visión general de las órdenes que comparten la misma configuración.
+
+-Calculamos la cantidad de órdenes, así como la fecha de inicio y fin de cada grupo.
+
+![image](https://github.com/user-attachments/assets/f706522a-97fb-47b8-9152-533270d61eee)
 
 

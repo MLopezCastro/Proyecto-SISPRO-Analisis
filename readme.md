@@ -207,3 +207,82 @@ Consulta de valores únicos de saccod1:
 
 ![image](https://github.com/user-attachments/assets/b233e8a5-1197-46e9-a354-9ea664d1769f)
 
+## 1. Análisis del resultado
+
+Distribución de saccod1:
+
+El valor más común es 29547 registros con saccod1 = 0, lo que parece indicar un valor por defecto o vacío en muchos registros. Esto podría significar que:
+
+No se asignó un código de sacabocado para esas órdenes.
+
+Es un valor irrelevante para el análisis de configuraciones compartidas.
+
+Hay 1,099 registros con saccod1 = NULL, lo cual implica que la información no está presente para estas órdenes.
+
+Los valores restantes tienen distribuciones más pequeñas, como:
+
+saccod1 = 385 con 50 registros.
+
+saccod1 = 414 con 27 registros.
+
+Otros valores únicos con cantidades menores.
+
+¿Qué podemos deducir?
+
+saccod1 = 0 o NULL probablemente no representan configuraciones válidas. Estos valores deberían descartarse para el análisis de configuraciones compartidas.
+Los valores como 385, 414, 484, etc., sí parecen ser configuraciones reales. Estos serán útiles para identificar órdenes que comparten la misma configuración.
+
+-----------------
+
+## 2. Ajustar los datos para avanzar
+
+Filtrar los valores útiles de saccod1:
+
+Vamos a descartar los registros donde:
+
+saccod1 = 0
+
+saccod1 IS NULL
+
+Consulta SQL:
+
+![image](https://github.com/user-attachments/assets/abf8e8c0-81ff-4e2d-810a-736ac71346f4)
+
+Resultados esperados:
+
+Esto debería mostrarnos solo los valores válidos de saccod1 para el análisis (es decir, aquellos mayores a 0).
+
+
+![image](https://github.com/user-attachments/assets/2ea65790-4a6e-40fa-adef-e014e449d7de)
+
+El error Conversion failed when converting the nvarchar value '38/2' to data type int ocurre porque en tu columna saccod1 hay valores que no son enteros (como el caso '38/2'). Esto sucede porque saccod1 está almacenado como un tipo de dato nvarchar, y al intentar compararlo con un número o realizar operaciones que esperan un tipo int, falla.
+
+Para resolverlo, necesitamos filtrar y convertir solo los valores que sean numéricos:
+
+## Solución: Filtrar solo valores numéricos
+
+Podemos usar una consulta que asegure que solo se procesen los valores numéricos en saccod1.
+
+1. Identificar registros no numéricos
+
+Primero, verifiquemos qué valores en saccod1 no son numéricos. Esto nos ayudará a confirmar cuántos registros están causando el problema:
+
+![image](https://github.com/user-attachments/assets/cb95725e-d617-4124-b215-d19bc3d575be)
+
+![image](https://github.com/user-attachments/assets/b03b8330-b1ad-4163-b42a-2fab904c9e12)
+
+##2. Filtrar registros numéricos
+
+Una vez identificados, ajustemos la consulta para trabajar solo con los valores numéricos. Esto filtra los valores válidos antes de convertir saccod1 a un tipo int:
+
+
+![image](https://github.com/user-attachments/assets/c9ac9199-0158-412e-b7ba-9836140c0311)
+
+
+![image](https://github.com/user-attachments/assets/72944d7e-04e6-42e0-b9d7-5e4e44742044)
+
+
+
+
+
+

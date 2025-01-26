@@ -193,6 +193,15 @@ Consulta para analizar saccod1:
 
 ![image](https://github.com/user-attachments/assets/d55567e1-bd8d-4bb2-8057-611ac4998bbe)
 
+----------------
+
+## Paso 4: Relacionar datos específicos de la máquina 201
+
+Si queremos avanzar directamente con la máquina 201 (como es el caso prioritario), filtramos solo los datos relevantes para esta máquina.
+
+Consulta para extraer datos de la máquina 201 en ConCubo:
+
+?????
 
 
 

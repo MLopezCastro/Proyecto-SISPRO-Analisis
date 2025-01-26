@@ -145,6 +145,7 @@ Esto nos dará una idea clara de:
 
 -Si hay fechas fuera del rango esperado o datos inconsistentes.
 
+![image](https://github.com/user-attachments/assets/c31b2e41-335d-4e83-ad7f-664b0e33c23d)
 
 
 

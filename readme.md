@@ -281,6 +281,28 @@ Una vez identificados, ajustemos la consulta para trabajar solo con los valores 
 
 ![image](https://github.com/user-attachments/assets/72944d7e-04e6-42e0-b9d7-5e4e44742044)
 
+Explicación
+
+-ISNUMERIC(saccod1):
+
+Filtra los valores que son numéricos (por ejemplo, '38' será válido, pero '38/2' no).
+CAST(saccod1 AS INT):
+
+Convierte los valores numéricos de tipo nvarchar a tipo int para que podamos analizarlos correctamente.
+
+----------------
+
+## 3. Consulta ajustada para relacionar tablas
+
+Después de confirmar y filtrar los valores válidos de saccod1, ajustemos la consulta para relacionar ConCubo con TablaVinculadaUNION usando únicamente valores numéricos:
+
+![image](https://github.com/user-attachments/assets/8f9c5bec-a26c-4345-94cb-60b5d7addaa4)
+
+![image](https://github.com/user-attachments/assets/c92ccf63-d125-459f-97a7-632e7a7047a4)
+
+Vemos que los registros en común comienzan en Octubre de 2021
+
+-------------------
 
 
 

@@ -522,5 +522,3 @@ Con los datos agrupados por saccod1_int, puedes calcular tiempos ajustados de pr
 
 
 
-
-

@@ -470,7 +470,29 @@ Con los resultados agrupados por OP y saccod1_int, puedes exportar estos datos p
 
 ![image](https://github.com/user-attachments/assets/c82331a5-09f0-4b66-ac72-45ed014b1d95)
 
+--------------------
 
+## Resumen del progreso
+
+-Hemos limpiado y estructurado los datos clave:
+
+-Identificamos que la columna saccod1 era útil para la máquina 201 y limpiamos los valores no numéricos.
+
+-Relacionamos correctamente las tablas ConCubo y TablaVinculadaUNION usando ID y OP.
+
+-Optamos por un enfoque práctico (agrupación por saccod1_int y OP):
+
+-Calculamos TotalOrdenes, FechaInicio, y FechaFin para cada combinación de OP y saccod1_int, lo que simplifica el análisis de configuraciones compartidas.
+
+-Esto nos permite identificar cuántas órdenes comparten la misma configuración.
+
+-Exportamos los datos optimizados a una nueva tabla (TablaOptimizadaSecuencias):
+
+Los datos ya están listos para análisis adicionales en Power BI, Python, o SQL.
+
+El análisis por saccod1_int es escalable: lo que hicimos para la máquina 201 puede aplicarse a otras máquinas con diferentes criterios de configuración.
+
+-------------
 
 
 

@@ -494,8 +494,31 @@ El análisis por saccod1_int es escalable: lo que hicimos para la máquina 201 p
 
 -------------
 
+## Estado actual: Máquina 201
 
+El problema de los tiempos de preparación de la máquina 201 está en camino de ser resuelto, gracias a los siguientes logros:
 
+Identificamos configuraciones compartidas:
+
+-Los datos ahora permiten analizar cuántas órdenes consecutivas utilizan la misma configuración (saccod1_int).
+
+-Esto es clave para ajustar los tiempos de preparación y optimizar el cálculo de indicadores como el OEE.
+
+-Base lista para visualización:
+
+Con la tabla optimizada, puedes crear reportes que muestren:
+
+-Configuraciones más comunes.
+
+-Fechas en las que se comparte la misma configuración.
+
+-Tiempos acumulados de preparación para secuencias específicas.
+
+Siguiente etapa: Análisis de tiempos de preparación:
+
+Con los datos agrupados por saccod1_int, puedes calcular tiempos ajustados de preparación y compararlos con los tiempos reales para identificar mejoras.
+
+----------
 
 
 

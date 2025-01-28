@@ -520,5 +520,27 @@ Con los datos agrupados por saccod1_int, puedes calcular tiempos ajustados de pr
 
 ----------
 
+## ¿Qué estamos buscando?
 
+El objetivo final es solucionar el problema de los tiempos de preparación de la máquina 201 (y posiblemente de otras máquinas en el futuro), que impacta la eficiencia operativa, incluyendo indicadores como el OEE (Eficiencia General del Equipo).
+
+Para eso, estamos:
+
+Identificando configuraciones compartidas: Ya logramos agrupar órdenes que usan la misma configuración (saccod1_int).
+
+Analizando tiempos de preparación: Ahora necesitamos entender cuánto tiempo real lleva preparar la máquina para estas configuraciones, ya sea:
+
+Tiempos reales (si están registrados en el sistema).
+
+Estimaciones basadas en conocimiento del personal operativo.
+
+¿Por qué analizamos las fechas?
+
+Las columnas fechaEmision y fechaEntrega en TablaVinculadaUNION pueden ser una forma indirecta de estimar:
+
+Cuánto tiempo transcurrió entre el inicio de la orden (emisión) y la finalización (entrega).
+
+Esto podría incluir tanto el tiempo de preparación como el tiempo de producción.
+
+Sin embargo, como hemos visto, las fechas son inconsistentes y no parecen ser completamente confiables para este propósito. Por eso, podría ser más efectivo consultar a los operadores de las máquinas para obtener información real sobre los tiempos de preparación.
 

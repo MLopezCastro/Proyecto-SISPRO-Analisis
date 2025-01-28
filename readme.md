@@ -544,3 +544,4 @@ Esto podría incluir tanto el tiempo de preparación como el tiempo de producci�
 
 Sin embargo, como hemos visto, las fechas son inconsistentes y no parecen ser completamente confiables para este propósito. Por eso, podría ser más efectivo consultar a los operadores de las máquinas para obtener información real sobre los tiempos de preparación.
 
+------------------

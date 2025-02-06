@@ -713,8 +713,34 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ![image](https://github.com/user-attachments/assets/571bef81-7b62-4931-857b-c22a7c28a8bc)
 
-![image](https://github.com/user-attachments/assets/4ddcf2e9-416d-424b-8c10-4614983ea083)
+![image](https://github.com/user-attachments/assets/ca18290e-b2f2-48f8-b62e-50d5446ba205)
 
+![image](https://github.com/user-attachments/assets/4e45f6c7-d590-44dc-ad23-937d0ff30225)
+
+-------------
+
+## Progreso del análisis y solución
+
+### Filtrado de datos
+- Creamos la tabla **ConCuboFiltrada2024** para trabajar únicamente con registros a partir de enero de 2024.
+- Esto nos asegura datos recientes y confiables, limitando los registros a órdenes relevantes para el análisis.
+
+### Relación entre tablas
+- **ConCuboFiltrada2024**: Proporciona los tiempos reales registrados en las máquinas.
+- **ConArbol**: Contiene tiempos programados por configuración (`saccod1`) y órdenes.
+- **TablaVinculadaUnion**: Vincula los IDs de órdenes con características físicas (`alto`, `ventana`).
+
+### Análisis actual
+- Filtramos exclusivamente para la máquina 201 y analizamos:
+  - Tiempos reales de preparación (mínimo y máximo).
+  - Cantidad de órdenes por configuración (`saccod1`, `alto`, `ventana`).
+  - Rango de fechas para las órdenes.
+
+### Siguientes pasos
+1. Comparar los tiempos reales con los programados.
+2. Identificar secuencias de órdenes consecutivas con configuraciones similares.
+3. Diseñar un modelo para ajustar tiempos programados según estas secuencias.
+4. Validar los resultados con la fábrica y plantear mejoras en el dashboard de Power BI.
 
 
 

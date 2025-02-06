@@ -645,5 +645,21 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ![image](https://github.com/user-attachments/assets/a5745fe9-fbca-476f-93aa-ffa29810ea0f)
 
+## Tabla ConCubo filtrada para 201 y desde Enero de 2024 ##
+
+![image](https://github.com/user-attachments/assets/e69f78b9-680f-40b9-a774-2fbc7aa7bb26)
+
+![image](https://github.com/user-attachments/assets/b513c936-c1e1-4824-9f24-1182d21cb853)
+
+## Validación de tiempos reales de preparación de 201 ##
+
+## Creamos una tabla temporal desde Enero de 2024 para 201 ##
+
+![image](https://github.com/user-attachments/assets/d9db2f43-fb22-47f4-a4f0-9adaa2a79ba0)
+
+![image](https://github.com/user-attachments/assets/98ca1737-c3fd-41b1-a169-0a37cb6ca2de)
+
+
+
 
 

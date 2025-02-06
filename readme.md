@@ -742,7 +742,20 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 3. Diseñar un modelo para ajustar tiempos programados según estas secuencias.
 4. Validar los resultados con la fábrica y plantear mejoras en el dashboard de Power BI.
 
+------------
 
+![image](https://github.com/user-attachments/assets/dee84b14-8c41-4d12-a703-e211c612d2c5)
 
+![image](https://github.com/user-attachments/assets/57d56a35-40b5-43dc-a2f5-9b2581158988)
+
+![image](https://github.com/user-attachments/assets/2e00f125-f2cc-4f73-ad67-ce7d4f2b19e7)
+
+![image](https://github.com/user-attachments/assets/ef13392b-1bf1-4c37-b4b8-27f5dc4e9282)
+
+![image](https://github.com/user-attachments/assets/7ead4081-83ee-41c4-a012-00d155118861)
+
+![image](https://github.com/user-attachments/assets/f7926130-4481-4c64-90ee-a642df60d576)
+
+------
 
 

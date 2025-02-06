@@ -632,9 +632,18 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 -----------
 
-![image](https://github.com/user-attachments/assets/18fad543-b7aa-43ed-b690-8a2e7cede81c)
+## Filtraremos desde Enero de 2024 ## 
 
+![image](https://github.com/user-attachments/assets/c386ff8c-51e7-4fe5-8c8b-ccf98332e5fa) 
 
+![image](https://github.com/user-attachments/assets/11d474f8-e4cf-453e-a981-a65fe2f6d5b6)
+
+![image](https://github.com/user-attachments/assets/2d4d49e3-acba-495a-92f8-3419770e3e11)
+
+----------
+## IMPORTANTE ## 
+
+![image](https://github.com/user-attachments/assets/a5745fe9-fbca-476f-93aa-ffa29810ea0f)
 
 
 

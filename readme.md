@@ -545,3 +545,21 @@ Esto podría incluir tanto el tiempo de preparación como el tiempo de producci�
 Sin embargo, como hemos visto, las fechas son inconsistentes y no parecen ser completamente confiables para este propósito. Por eso, podría ser más efectivo consultar a los operadores de las máquinas para obtener información real sobre los tiempos de preparación.
 
 ------------------
+
+## Tiempos Reales de cada etapa ##
+
+En la tabla ConCubo las columnas Inicio y Fin indican las horas de inicio y fin de cada etapa. 
+
+La columna Estado contiene cuatro ítems (preparación, parada, producción y mantenimiento) .Estos son los estados en los que puede estar una máquina.
+
+La columna CantidadHoras tiene el tiempo real de cada etapa.
+
+
+
+
+
+
+
+
+
+

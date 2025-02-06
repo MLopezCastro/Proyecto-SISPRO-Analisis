@@ -554,6 +554,8 @@ La columna Estado contiene cuatro ítems (preparación, parada, producción y ma
 
 La columna CantidadHoras tiene el tiempo real de cada etapa.
 
+![image](https://github.com/user-attachments/assets/45252553-1814-4c8d-a8a9-a852b3fdec34)
+
 
 
 

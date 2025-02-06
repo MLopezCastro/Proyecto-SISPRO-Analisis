@@ -659,6 +659,19 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ![image](https://github.com/user-attachments/assets/98ca1737-c3fd-41b1-a169-0a37cb6ca2de)
 
+## Se creó otra tabla, llamada ConCuboFiltrada2024, con los registros desde Enero de 2024 ## 
+
+![image](https://github.com/user-attachments/assets/22fd9b96-14ce-4ca6-b337-e3d3e2fbfd4a)
+
+![image](https://github.com/user-attachments/assets/2a8530f0-9c65-4248-821d-46c2a18d4158)
+
+![image](https://github.com/user-attachments/assets/0ac574de-6a3c-490d-8c75-4e627d490f12)
+
+![image](https://github.com/user-attachments/assets/4e06b2e7-8faa-4104-b9e0-335cf8951d39)
+
+
+
+
 
 
 

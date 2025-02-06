@@ -669,8 +669,39 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ![image](https://github.com/user-attachments/assets/4e06b2e7-8faa-4104-b9e0-335cf8951d39)
 
+![image](https://github.com/user-attachments/assets/1b6e53e0-8936-4666-9eb6-66ea8fafb5ce)
 
+-----------
 
+![image](https://github.com/user-attachments/assets/f05308cd-88a7-43a7-8d93-bd5e507ba241)
+
+![image](https://github.com/user-attachments/assets/1c0969f2-9ff1-4d27-98da-2b8d68c8756c)
+
+-----------
+
+![image](https://github.com/user-attachments/assets/d1e8d50d-a08b-4e44-81e1-0c2be268daba)
+
+![image](https://github.com/user-attachments/assets/67fb9ae7-4cd1-4536-b8e7-2a716f72f54c)
+
+![image](https://github.com/user-attachments/assets/ee9ed8b5-a988-4d15-b6f3-a08f86a4cd0a)
+
+![image](https://github.com/user-attachments/assets/41708841-5f89-4df6-817c-c684f528f31f)
+
+![image](https://github.com/user-attachments/assets/66cf7583-6e48-4efb-b115-b5962f0e3e88)
+
+![image](https://github.com/user-attachments/assets/a43fc975-a9e5-426a-930e-0368730e794c)
+
+----------
+
+![image](https://github.com/user-attachments/assets/c314eb10-d44d-483b-aaaa-343809e36efb)
+
+![image](https://github.com/user-attachments/assets/b32d6008-1abe-4861-972c-ecf904ae9f27)
+
+![image](https://github.com/user-attachments/assets/75c7f60c-b221-4d56-b4db-eb55616f0fb6)
+
+![image](https://github.com/user-attachments/assets/42a2fb08-1884-4fc3-a3e9-d525f4b162b2)
+
+![image](https://github.com/user-attachments/assets/5d3e409a-fc6e-4cec-ae84-2d2f0779042d)
 
 
 

@@ -780,6 +780,32 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ------------------
 
-![image](https://github.com/user-attachments/assets/69a35b4f-c046-47cf-98d3-5c771af93df8)
+![image](https://github.com/user-attachments/assets/6f082517-c84f-403d-adf3-631b17949250)
+
+![image](https://github.com/user-attachments/assets/1c78c7af-a5aa-4bad-8a3c-836e2d44c4b6)
+
+![image](https://github.com/user-attachments/assets/1067d1b4-05df-4ced-961e-960d15799e40)
+
+## Creamos la tabla Filtrada_Maquina201 ##
+
+![image](https://github.com/user-attachments/assets/5d8a9e9b-218a-4795-9abc-994eb9076956)
+
+## Progreso actual
+
+### Consolidación de datos:
+Hemos consolidado los datos de **ConCuboFiltrada2024**, **ConArbol** y **TablaVinculadaUNION** para la máquina 201, filtrando únicamente registros desde enero de 2024.
+
+### Pasos realizados:
+1. Relacionamos los tiempos reales de preparación y producción con los tiempos programados.
+2. Incluimos configuraciones clave (`saccod1`, `alto`, `ventana`) para identificar secuencias de órdenes similares.
+3. Calculamos discrepancias entre tiempos reales y programados.
+4. Exportamos los resultados a una nueva tabla: **Filtrada_Maquina201**.
+
+### Próximos pasos:
+- Detectar secuencias consecutivas de órdenes que comparten configuraciones similares.
+- Ajustar tiempos programados para dichas secuencias.
+- Preparar reportes para identificar áreas de mejora en los tiempos de preparación.
+
+---
 
 

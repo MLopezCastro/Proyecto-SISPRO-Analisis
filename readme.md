@@ -758,4 +758,13 @@ La columna CantidadHoras tiene el tiempo real de cada etapa.
 
 ------
 
+![image](https://github.com/user-attachments/assets/2e996aec-6141-4e71-9d3d-38e52673c666)
+
+![image](https://github.com/user-attachments/assets/e71c940f-18de-46b4-8b37-a9b75833aee7)
+
+![image](https://github.com/user-attachments/assets/63067e2f-6521-45fd-a66e-1a2b56d32b15)
+
+---------------
+
+
 

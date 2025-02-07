@@ -805,7 +805,35 @@ Hemos consolidado los datos de **ConCuboFiltrada2024**, **ConArbol** y **TablaVi
 - Detectar secuencias consecutivas de órdenes que comparten configuraciones similares.
 - Ajustar tiempos programados para dichas secuencias.
 - Preparar reportes para identificar áreas de mejora en los tiempos de preparación.
-
 ---
 
+![image](https://github.com/user-attachments/assets/004bc17b-fe2f-4704-a907-3097040c9ef3)
+
+![image](https://github.com/user-attachments/assets/c1f4fea1-c680-4378-b2ad-d3ca3b3234f8)
+![image](https://github.com/user-attachments/assets/a78f64fd-759a-407c-8d82-74896d2887dd)
+![image](https://github.com/user-attachments/assets/4ee953cf-b7e9-4361-ac35-bd6dd3e13ce1)
+
+![image](https://github.com/user-attachments/assets/420c83b3-1c31-4b29-932f-e06d6ea07882)
+
+![image](https://github.com/user-attachments/assets/461a064c-fccc-4384-bba6-75262f44915a)
+
+![image](https://github.com/user-attachments/assets/25c18c0c-7639-45f3-8530-c8f2630d8904)
+
+## Identificación de Secuencias en Máquina 201 ##
+
+Hemos realizado un análisis de las órdenes de trabajo en la máquina 201 para identificar secuencias basadas en configuraciones similares (saccod1) y tiempos consecutivos. Este análisis ha permitido agrupar órdenes en 44 secuencias distintas.
+
+Tiempos reales vs. programados: Calculamos el total de horas reales trabajadas y las comparamos con los tiempos programados de preparación y producción para cada secuencia.
+
+Secuencias largas: Detectamos casos con más de 200 órdenes en una misma secuencia, lo que podría indicar problemas de planificación o configuración.
+
+Secuencias pequeñas: Identificamos secuencias cortas (1-2 órdenes), reflejando posibles interrupciones operativas.
+
+Este análisis será clave para ajustar los tiempos programados y optimizar el rendimiento de la máquina.
+
+----------------
+
+![image](https://github.com/user-attachments/assets/90568197-c2c2-4309-a5f5-7e7996e0ced5)
+
+![image](https://github.com/user-attachments/assets/58b71316-2550-43ab-8376-280c29a2601e)
 

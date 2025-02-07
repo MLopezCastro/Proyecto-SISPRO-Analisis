@@ -546,3 +546,311 @@ Sin embargo, como hemos visto, las fechas son inconsistentes y no parecen ser co
 
 ------------------
 
+<<<<<<< HEAD
+=======
+## Tiempos Reales de cada etapa ##
+
+En la tabla ConCubo las columnas Inicio y Fin indican las horas de inicio y fin de cada etapa. 
+
+La columna Estado contiene cuatro ítems (preparación, parada, producción y mantenimiento) .Estos son los estados en los que puede estar una máquina.
+
+La columna CantidadHoras tiene el tiempo real de cada etapa.
+
+![image](https://github.com/user-attachments/assets/45252553-1814-4c8d-a8a9-a852b3fdec34)
+
+![image](https://github.com/user-attachments/assets/cadd0356-f33d-44a9-ba9f-7def3c8fd894)
+
+![image](https://github.com/user-attachments/assets/1965ba12-807f-495b-80bc-e2e8046f8c67)
+
+------------
+
+![image](https://github.com/user-attachments/assets/232106c6-85d6-4c30-a5b5-8ebc6b8fa253)
+
+![image](https://github.com/user-attachments/assets/cb6e1809-c098-4404-a703-e90de07a4054)
+
+![image](https://github.com/user-attachments/assets/4150cea4-1b5e-4efc-a087-48dad2dc3a81)
+
+-------------
+
+![image](https://github.com/user-attachments/assets/49174acc-9af0-4c91-834d-2da22ea3b4cc)
+
+![image](https://github.com/user-attachments/assets/694340c7-8071-474a-9290-5f8bc65870bd)
+
+-------
+
+![image](https://github.com/user-attachments/assets/46d4f205-2d87-40ae-8880-29ab02cf6f00)
+
+![image](https://github.com/user-attachments/assets/d516986f-5003-4171-a46d-b2001abbb0d1)
+
+![image](https://github.com/user-attachments/assets/ff71944a-5773-49e1-908d-392b9780966f)
+
+![image](https://github.com/user-attachments/assets/72493235-6e1b-4b2b-8611-77b4ddeff2c2)
+
+----------
+
+![image](https://github.com/user-attachments/assets/69ed4cfc-adf8-4a96-b829-53fa9fc7b679)
+
+![image](https://github.com/user-attachments/assets/fa70e1eb-95c7-4597-b886-70f3b367b54f)
+
+![image](https://github.com/user-attachments/assets/9a554cf0-ae8a-43af-ad6c-f70f381df781)
+
+![image](https://github.com/user-attachments/assets/a8063427-82e1-456f-8e5a-38a315964bbe)
+
+![image](https://github.com/user-attachments/assets/a4f7b2ab-77b6-4ca4-a7ba-1b0fe0576bb9)
+
+![image](https://github.com/user-attachments/assets/fc29f3d4-9bc5-4b05-a8cf-d950f41cf356)
+
+--------------------
+
+![image](https://github.com/user-attachments/assets/e6ba944b-0bdd-40b9-a88a-e77a6a6ebc39)
+
+![image](https://github.com/user-attachments/assets/9892d51b-7ff0-4319-8183-ff9211d0d4e3)
+
+![image](https://github.com/user-attachments/assets/862591f3-64b6-41eb-a675-7d9242768423)
+
+![image](https://github.com/user-attachments/assets/bdf27b22-50cd-4c5f-894d-ace708ba4719)
+
+-------------
+
+![image](https://github.com/user-attachments/assets/3b0ee776-86a8-443b-833e-b17961747182)
+
+-----------------
+
+![image](https://github.com/user-attachments/assets/9fb9140b-4f20-48d2-ad14-a0aebd512dc7)
+
+![image](https://github.com/user-attachments/assets/41661316-4a5b-4f57-b0d1-f33d418c7a0a)
+
+-----------
+
+![image](https://github.com/user-attachments/assets/ff352656-42d1-4b4c-9335-97f19a729335)
+
+-----------------
+
+![image](https://github.com/user-attachments/assets/b0755b06-0f5e-41f8-89b3-2c2c3007e47f)
+
+![image](https://github.com/user-attachments/assets/7c0e5f22-19a6-4503-83fc-4a163090701a)
+
+![image](https://github.com/user-attachments/assets/7b7fbac2-c521-4d03-bd47-ea752d3ec5dc)
+
+-----------
+
+## Filtraremos desde Enero de 2024 ## 
+
+![image](https://github.com/user-attachments/assets/c386ff8c-51e7-4fe5-8c8b-ccf98332e5fa) 
+
+![image](https://github.com/user-attachments/assets/11d474f8-e4cf-453e-a981-a65fe2f6d5b6)
+
+![image](https://github.com/user-attachments/assets/2d4d49e3-acba-495a-92f8-3419770e3e11)
+
+----------
+## IMPORTANTE ## 
+
+![image](https://github.com/user-attachments/assets/a5745fe9-fbca-476f-93aa-ffa29810ea0f)
+
+## Tabla ConCubo filtrada para 201 y desde Enero de 2024 ##
+
+![image](https://github.com/user-attachments/assets/e69f78b9-680f-40b9-a774-2fbc7aa7bb26)
+
+![image](https://github.com/user-attachments/assets/b513c936-c1e1-4824-9f24-1182d21cb853)
+
+## Validación de tiempos reales de preparación de 201 ##
+
+## Creamos una tabla temporal desde Enero de 2024 para 201 ##
+
+![image](https://github.com/user-attachments/assets/d9db2f43-fb22-47f4-a4f0-9adaa2a79ba0)
+
+![image](https://github.com/user-attachments/assets/98ca1737-c3fd-41b1-a169-0a37cb6ca2de)
+
+## Se creó otra tabla, llamada ConCuboFiltrada2024, con los registros desde Enero de 2024 ## 
+
+![image](https://github.com/user-attachments/assets/22fd9b96-14ce-4ca6-b337-e3d3e2fbfd4a)
+
+![image](https://github.com/user-attachments/assets/2a8530f0-9c65-4248-821d-46c2a18d4158)
+
+![image](https://github.com/user-attachments/assets/0ac574de-6a3c-490d-8c75-4e627d490f12)
+
+![image](https://github.com/user-attachments/assets/4e06b2e7-8faa-4104-b9e0-335cf8951d39)
+
+![image](https://github.com/user-attachments/assets/1b6e53e0-8936-4666-9eb6-66ea8fafb5ce)
+
+-----------
+
+![image](https://github.com/user-attachments/assets/f05308cd-88a7-43a7-8d93-bd5e507ba241)
+
+![image](https://github.com/user-attachments/assets/1c0969f2-9ff1-4d27-98da-2b8d68c8756c)
+
+-----------
+
+![image](https://github.com/user-attachments/assets/d1e8d50d-a08b-4e44-81e1-0c2be268daba)
+
+![image](https://github.com/user-attachments/assets/67fb9ae7-4cd1-4536-b8e7-2a716f72f54c)
+
+![image](https://github.com/user-attachments/assets/ee9ed8b5-a988-4d15-b6f3-a08f86a4cd0a)
+
+![image](https://github.com/user-attachments/assets/41708841-5f89-4df6-817c-c684f528f31f)
+
+![image](https://github.com/user-attachments/assets/66cf7583-6e48-4efb-b115-b5962f0e3e88)
+
+![image](https://github.com/user-attachments/assets/a43fc975-a9e5-426a-930e-0368730e794c)
+
+----------
+
+![image](https://github.com/user-attachments/assets/c314eb10-d44d-483b-aaaa-343809e36efb)
+
+![image](https://github.com/user-attachments/assets/b32d6008-1abe-4861-972c-ecf904ae9f27)
+
+![image](https://github.com/user-attachments/assets/75c7f60c-b221-4d56-b4db-eb55616f0fb6)
+
+![image](https://github.com/user-attachments/assets/42a2fb08-1884-4fc3-a3e9-d525f4b162b2)
+
+![image](https://github.com/user-attachments/assets/5d3e409a-fc6e-4cec-ae84-2d2f0779042d)
+
+![image](https://github.com/user-attachments/assets/d24b9b3e-4f14-48ad-908c-fb95f6a2f084)
+
+![image](https://github.com/user-attachments/assets/603fc1fa-11c5-4048-b833-13f832905d40)
+
+![image](https://github.com/user-attachments/assets/e8084da4-8eb9-4a5f-860a-ca3e6de75531)
+
+![image](https://github.com/user-attachments/assets/64aebda8-6ef8-431e-a495-b6d8f00613cc)
+
+![image](https://github.com/user-attachments/assets/571bef81-7b62-4931-857b-c22a7c28a8bc)
+
+![image](https://github.com/user-attachments/assets/ca18290e-b2f2-48f8-b62e-50d5446ba205)
+
+![image](https://github.com/user-attachments/assets/4e45f6c7-d590-44dc-ad23-937d0ff30225)
+
+-------------
+
+## Progreso del análisis y solución
+
+### Filtrado de datos
+- Creamos la tabla **ConCuboFiltrada2024** para trabajar únicamente con registros a partir de enero de 2024.
+- Esto nos asegura datos recientes y confiables, limitando los registros a órdenes relevantes para el análisis.
+
+### Relación entre tablas
+- **ConCuboFiltrada2024**: Proporciona los tiempos reales registrados en las máquinas.
+- **ConArbol**: Contiene tiempos programados por configuración (`saccod1`) y órdenes.
+- **TablaVinculadaUnion**: Vincula los IDs de órdenes con características físicas (`alto`, `ventana`).
+
+### Análisis actual
+- Filtramos exclusivamente para la máquina 201 y analizamos:
+  - Tiempos reales de preparación (mínimo y máximo).
+  - Cantidad de órdenes por configuración (`saccod1`, `alto`, `ventana`).
+  - Rango de fechas para las órdenes.
+
+### Siguientes pasos
+1. Comparar los tiempos reales con los programados.
+2. Identificar secuencias de órdenes consecutivas con configuraciones similares.
+3. Diseñar un modelo para ajustar tiempos programados según estas secuencias.
+4. Validar los resultados con la fábrica y plantear mejoras en el dashboard de Power BI.
+
+------------
+
+![image](https://github.com/user-attachments/assets/dee84b14-8c41-4d12-a703-e211c612d2c5)
+
+![image](https://github.com/user-attachments/assets/57d56a35-40b5-43dc-a2f5-9b2581158988)
+
+![image](https://github.com/user-attachments/assets/2e00f125-f2cc-4f73-ad67-ce7d4f2b19e7)
+
+![image](https://github.com/user-attachments/assets/ef13392b-1bf1-4c37-b4b8-27f5dc4e9282)
+
+![image](https://github.com/user-attachments/assets/7ead4081-83ee-41c4-a012-00d155118861)
+
+![image](https://github.com/user-attachments/assets/f7926130-4481-4c64-90ee-a642df60d576)
+
+------
+
+![image](https://github.com/user-attachments/assets/2e996aec-6141-4e71-9d3d-38e52673c666)
+
+![image](https://github.com/user-attachments/assets/e71c940f-18de-46b4-8b37-a9b75833aee7)
+
+![image](https://github.com/user-attachments/assets/63067e2f-6521-45fd-a66e-1a2b56d32b15)
+
+---------------
+
+![image](https://github.com/user-attachments/assets/1cded943-4c8b-415d-93b4-ea3aa216fba4)
+
+![image](https://github.com/user-attachments/assets/841f113f-527b-4439-b393-86d808b1310d)
+
+![image](https://github.com/user-attachments/assets/c671a6a4-82c3-4416-90ac-4c4510b67ba7)
+
+![image](https://github.com/user-attachments/assets/c9bf226e-32db-476f-b7cd-9731a4d25f19)
+
+![image](https://github.com/user-attachments/assets/829d42af-c55c-433e-9e5a-f0b03d61c4da)
+
+![image](https://github.com/user-attachments/assets/e4c4809c-c0f6-482c-9a26-f4ccd7b776b4)
+
+------------------
+
+![image](https://github.com/user-attachments/assets/6f082517-c84f-403d-adf3-631b17949250)
+
+![image](https://github.com/user-attachments/assets/1c78c7af-a5aa-4bad-8a3c-836e2d44c4b6)
+
+![image](https://github.com/user-attachments/assets/1067d1b4-05df-4ced-961e-960d15799e40)
+
+## Creamos la tabla Filtrada_Maquina201 ##
+
+![image](https://github.com/user-attachments/assets/5d8a9e9b-218a-4795-9abc-994eb9076956)
+
+## Progreso actual
+
+### Consolidación de datos:
+Hemos consolidado los datos de **ConCuboFiltrada2024**, **ConArbol** y **TablaVinculadaUNION** para la máquina 201, filtrando únicamente registros desde enero de 2024.
+
+### Pasos realizados:
+1. Relacionamos los tiempos reales de preparación y producción con los tiempos programados.
+2. Incluimos configuraciones clave (`saccod1`, `alto`, `ventana`) para identificar secuencias de órdenes similares.
+3. Calculamos discrepancias entre tiempos reales y programados.
+4. Exportamos los resultados a una nueva tabla: **Filtrada_Maquina201**.
+
+### Próximos pasos:
+- Detectar secuencias consecutivas de órdenes que comparten configuraciones similares.
+- Ajustar tiempos programados para dichas secuencias.
+- Preparar reportes para identificar áreas de mejora en los tiempos de preparación.
+---
+
+![image](https://github.com/user-attachments/assets/004bc17b-fe2f-4704-a907-3097040c9ef3)
+
+![image](https://github.com/user-attachments/assets/c1f4fea1-c680-4378-b2ad-d3ca3b3234f8)
+![image](https://github.com/user-attachments/assets/a78f64fd-759a-407c-8d82-74896d2887dd)
+![image](https://github.com/user-attachments/assets/4ee953cf-b7e9-4361-ac35-bd6dd3e13ce1)
+
+![image](https://github.com/user-attachments/assets/420c83b3-1c31-4b29-932f-e06d6ea07882)
+
+![image](https://github.com/user-attachments/assets/461a064c-fccc-4384-bba6-75262f44915a)
+
+![image](https://github.com/user-attachments/assets/25c18c0c-7639-45f3-8530-c8f2630d8904)
+
+## Identificación de Secuencias en Máquina 201 ##
+
+Hemos realizado un análisis de las órdenes de trabajo en la máquina 201 para identificar secuencias basadas en configuraciones similares (saccod1) y tiempos consecutivos. Este análisis ha permitido agrupar órdenes en 44 secuencias distintas.
+
+Tiempos reales vs. programados: Calculamos el total de horas reales trabajadas y las comparamos con los tiempos programados de preparación y producción para cada secuencia.
+
+Secuencias largas: Detectamos casos con más de 200 órdenes en una misma secuencia, lo que podría indicar problemas de planificación o configuración.
+
+Secuencias pequeñas: Identificamos secuencias cortas (1-2 órdenes), reflejando posibles interrupciones operativas.
+
+Este análisis será clave para ajustar los tiempos programados y optimizar el rendimiento de la máquina.
+
+----------------
+
+![image](https://github.com/user-attachments/assets/90568197-c2c2-4309-a5f5-7e7996e0ced5)
+
+![image](https://github.com/user-attachments/assets/58b71316-2550-43ab-8376-280c29a2601e)
+
+![image](https://github.com/user-attachments/assets/c32927a4-364a-475b-afac-6cdbebea03b4)
+
+-----------------
+
+![image](https://github.com/user-attachments/assets/c0359bbb-5811-46e8-8b05-721540e15dfb)
+
+![image](https://github.com/user-attachments/assets/70bd9bb3-7ff4-47d7-9500-100490ec4ab9)
+
+![image](https://github.com/user-attachments/assets/26793858-ee3d-460f-a706-0e29f111a527)
+
+![image](https://github.com/user-attachments/assets/981cf209-0245-495c-89dd-87d13640d7d2)
+
+
+
+>>>>>>> 0d6e0ab1967c58bfdbfdc6aa5717c87b7d6b2be4

@@ -863,11 +863,30 @@ Este análisis será clave para ajustar los tiempos programados y optimizar el r
 
 ![image](https://github.com/user-attachments/assets/2871aad9-abd0-466d-8a92-0b606ad26536)
 
+![image](https://github.com/user-attachments/assets/3cd32b6e-e13e-43e7-b3af-ade722d45e00)
 
+(consulta sql 100)
 
+![image](https://github.com/user-attachments/assets/3c0b13ea-8feb-4ecd-bf3c-5bb976251366)
+![image](https://github.com/user-attachments/assets/aa0c1061-0ed4-404e-a419-788d4e6bb1b4)
 
+![image](https://github.com/user-attachments/assets/4a0c3062-933e-4dd8-bec9-22b3c073884f)
 
+![image](https://github.com/user-attachments/assets/9e653b1e-7fd7-4f4c-be6c-407ce9754a54)
 
+(consulta sql 101)
 
+------------------
 
+![image](https://github.com/user-attachments/assets/126053e5-434a-4904-82a1-53828489264e)
+
+![image](https://github.com/user-attachments/assets/a55e26f4-b510-48b1-a6d5-e50c224d9b58)
+
+![image](https://github.com/user-attachments/assets/e3a7c90b-ab11-4d44-8631-db3c350f2b5c)
+
+![image](https://github.com/user-attachments/assets/159f866e-8859-4507-b8d2-7461b8dea8ca)
+
+![image](https://github.com/user-attachments/assets/909f0cf4-7005-4b8d-8a21-75515d2ed2c8)
+
+![image](https://github.com/user-attachments/assets/8631c17d-f019-4b58-8fb9-b8abf24d1241)
 

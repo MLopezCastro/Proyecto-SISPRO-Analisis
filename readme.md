@@ -837,3 +837,13 @@ Este análisis será clave para ajustar los tiempos programados y optimizar el r
 
 ![image](https://github.com/user-attachments/assets/58b71316-2550-43ab-8376-280c29a2601e)
 
+![image](https://github.com/user-attachments/assets/c32927a4-364a-475b-afac-6cdbebea03b4)
+
+-----------------
+
+![image](https://github.com/user-attachments/assets/c0359bbb-5811-46e8-8b05-721540e15dfb)
+
+![image](https://github.com/user-attachments/assets/70bd9bb3-7ff4-47d7-9500-100490ec4ab9)
+
+
+

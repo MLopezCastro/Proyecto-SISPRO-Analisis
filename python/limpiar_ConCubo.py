@@ -1,31 +1,43 @@
 import pandas as pd
-import numpy as np
+from datetime import datetime, timedelta
 
-df["ID"] = df["ID"].astype(str)  # Convertir a string
-df["ID_limpio"] = df["ID"].str.extract("(\d+)")
+# 📂 Cargar el archivo
+archivo = r"C:\Users\mlope\OneDrive\Escritorio\MLopezCastro\Proyecto-SISPRO-Analisis\python\ConCubo_desde_Nov24.csv"
+df = pd.read_csv(archivo)
+
+# 🔍 Filtrar solo la máquina 201
+df = df[df["Renglon"] == 201].copy()
+
+# 🆔 Crear la columna de "ID limpio"
+df["ID_limpio"] = "FAM 400"  # Si necesitas algo más dinámico, dime cómo
+
+# ⏳ Convertir tiempos de Inicio y Fin
+# Vamos a asumir que 4500.66523 es "días desde un punto de referencia"
+referencia = datetime(1900, 1, 1)  # Puede ser otro si lo necesitas
+df["Inicio_legible"] = df["Inicio"].apply(lambda x: referencia + timedelta(days=x))
+df["Fin_legible"] = df["Fin"].apply(lambda x: referencia + timedelta(days=x))
+
+# 📄 Guardar el archivo filtrado y corregido
+salida = r"C:\Users\mlope\OneDrive\Escritorio\MLopezCastro\Proyecto-SISPRO-Analisis\python\ConCubo_filtrado.csv"
+df.to_csv(salida, index=False)
+
+print("✅ Archivo procesado y guardado en:", salida)
+
+
+# Ver nombres de las columnas
+print("📝 Columnas en el DataFrame:", df.columns)
+
+# Ver las primeras filas del DataFrame
+print(df.head())
+
+# Ver info general del DataFrame
+print(df.info())
+
+
+import pandas as pd
+
+# Cargar el archivo limpio
+df = pd.read_csv("limpiar_ConCubo.csv")
 
 
 
-
-
-
-# Cargar ConCubo filtrado (máquina 201)
-ruta_concubo = "C:/Users/mlope/OneDrive/Escritorio/MLopezCastro/Proyecto-SISPRO-Analisis/python/ConCubo_filtrado_201.csv"
-df = pd.read_csv(ruta_concubo, sep=";", encoding="utf-8-sig")
-
-# 🔹 1. Convertir 'Inicio' y 'Fin' a formato datetime
-# Multiplicamos por 86400 (segundos en un día) y sumamos a la fecha base de Excel (1899-12-30)
-df["Inicio_dt"] = pd.to_datetime("1899-12-30") + pd.to_timedelta(df["Inicio"] * 86400, unit="s")
-df["Fin_dt"] = pd.to_datetime("1899-12-30") + pd.to_timedelta(df["Fin"] * 86400, unit="s")
-
-# 🔹 2. Crear columna de ID limpio (extraer solo el número)
-df["ID_limpio"] = df["ID"].str.extract("(\d+)")  # Extrae solo los números
-
-# 🔹 3. Revisamos si todo salió bien
-print(df[["Inicio", "Inicio_dt", "Fin", "Fin_dt", "ID", "ID_limpio"]].head())
-
-# 🔹 4. Guardamos un nuevo archivo limpio
-ruta_salida = "C:/Users/mlope/OneDrive/Escritorio/MLopezCastro/Proyecto-SISPRO-Analisis/python/ConCubo_filtrado_201_limpio.csv"
-df.to_csv(ruta_salida, index=False, sep=";", encoding="utf-8-sig")
-
-print(f"✅ Archivo guardado: {ruta_salida}")

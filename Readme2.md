@@ -245,5 +245,92 @@ SELECT * FROM VinculadaUnion_2025;
 
 🚀 **Por favor, realizar todas las pruebas y confirmar el correcto funcionamiento antes de comenzar la carga oficial de datos.**
 
+-------------------------------
+
+Aquí tienes el **mensaje detallado** para enviar a la fábrica, explicando **el orden correcto de carga de datos** en SQL Server.
+
+---
+
+📢 **Asunto:** 🔹 Orden Correcto de Carga de Datos en SQL Server – `ConArbol_2025`, `ConCubo_2025` y `VinculadaUnion_2025`  
+
+👋 **Equipo**,  
+
+Les enviamos esta guía con el **orden correcto para cargar los datos en las nuevas tablas** de producción. Es importante que el sistema **siga esta secuencia**, de lo contrario, las claves foráneas (`FOREIGN KEY`) generarán errores al intentar insertar registros.  
+
+## **📌 Orden Correcto de Carga de Datos**  
+
+⚠️ **El sistema debe insertar los datos en el siguiente orden:**  
+
+1️⃣ **Primero: Cargar `ConArbol_2025`**  
+   - Aquí se registran los **ID_Limpio** y **Renglones_Limpio**.  
+   - Esta tabla **debe llenarse primero** porque `ConCubo_2025` y `VinculadaUnion_2025` dependen de sus datos.  
+   
+   **Ejemplo de inserción:**  
+   ```sql
+   INSERT INTO ConArbol_2025 (ID, ID_Limpio, Renglones, Renglones_Limpio, HoraInicio, HoraInicioProg, CantidadHorasProgPrep, CantidadHorasProgProd)
+   VALUES ('FAM 26446', 26446, '201', 201, '08:00:00', '07:50:00', '00:10:00', '01:30:00');
+   ```
+
+2️⃣ **Segundo: Cargar `ConCubo_2025`**  
+   - **Solo se pueden insertar datos aquí si `ID_Limpio` ya existe en `ConArbol_2025`.**  
+   - La clave foránea `Renglon` debe coincidir con `Renglones_Limpio` en `ConArbol_2025`.  
+
+   **Ejemplo de inserción:**  
+   ```sql
+   INSERT INTO ConCubo_2025 (DiaInicio, Inicio, Fin, Turno, Solapa, Renglon, ID, ID_Limpio, Maquina_Parada, Preparacion, Produccion, Mantenimiento, CantidadBuenosProducida, CantidadMalosProducida, codproducto)
+   VALUES ('2025-03-03', '08:45:32', '10:30:15', 'Mañana', 'Conf Sobres', 201, 'FAM 26446', 26446, '00:30:00', '00:20:00', '01:00:00', '00:10:00', 3620, 0, '6500');
+   ```
+
+3️⃣ **Tercero: Cargar `VinculadaUnion_2025`**  
+   - **Solo se pueden insertar datos aquí si `OP_Limpio` ya existe en `ConCubo_2025` y `ConArbol_2025`.**  
+   - La clave foránea `OP_Limpio` debe vincularse con `ID_Limpio` de ambas tablas.  
+
+   **Ejemplo de inserción:**  
+   ```sql
+   INSERT INTO VinculadaUnion_2025 (OP, OP_Limpio, saccod1, Alto, Ancho, Alto_V, Ancho_V)
+   VALUES ('OP 26446', 26446, '002/2', 150, 200, 160, 210);
+   ```
+
+---
+
+## **📌 ¿Qué pasa si se intenta cargar fuera de orden?**  
+
+❌ **Si intentan cargar `ConCubo_2025` antes de `ConArbol_2025`**, SQL Server devolverá un error porque `ID_Limpio` aún no existe en `ConArbol_2025`.  
+
+❌ **Si intentan cargar `VinculadaUnion_2025` antes de `ConCubo_2025` o `ConArbol_2025`**, SQL Server devolverá un error porque `OP_Limpio` aún no está vinculado.  
+
+✅ **Si el sistema respeta este orden, la carga de datos será exitosa sin errores.**  
+
+---
+
+## **📌 ¿Qué deben hacer ahora?**  
+
+🔹 **1️⃣ Revisar cómo su sistema carga los datos en SQL.**  
+- **¿Genera primero los registros en `ConArbol_2025` antes de insertar en `ConCubo_2025` y `VinculadaUnion_2025`?**  
+- **¿O intenta insertar en las tres tablas al mismo tiempo?**  
+
+🔹 **2️⃣ Hacer una prueba de carga con datos reales.**  
+Ejecutar el proceso normal y verificar que:  
+✅ **Primero aparecen los datos en `ConArbol_2025`**.  
+✅ **Luego en `ConCubo_2025` con los ID_Limpio correctos**.  
+✅ **Finalmente, en `VinculadaUnion_2025`, vinculando con los ID_Limpio de ambas tablas.**  
+
+🔹 **3️⃣ Informar si hay problemas.**  
+Si el sistema intenta cargar todo a la vez y falla, podemos evaluar soluciones como:  
+- **Ajustar el orden de inserción en el sistema.**  
+- **Desactivar temporalmente las claves foráneas (`FOREIGN KEY`) y reactivarlas luego.**  
+
+---
+
+📢 **Por favor, confirmen si su sistema carga los datos en este orden y realicen una prueba.**  
+Si encuentran algún problema, envíennos el error para analizar la mejor solución.  
+
+🚀 **Esperamos su respuesta para validar que todo funcione correctamente.**  
+
+Saludos,  
+Marcelo
+
+---------------------------------------------------------
+
 
 

@@ -3,7 +3,7 @@
 ## **1. Introducción**
 Este documento detalla el proceso de creación y validación de tres tablas en SQL Server: **ConCubo_2025**, **ConArbol_2025** y **VinculadaUnion_2025**. Se incluyen las decisiones tomadas, correcciones aplicadas y los scripts finales utilizados.
 
-##**Creación de la Base de Datos**##
+## **Creación de la Base de Datos**##
 CREATE DATABASE Sispro_2025;
 USE Sispro_2025;
 

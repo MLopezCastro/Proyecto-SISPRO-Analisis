@@ -5,13 +5,6 @@ Este documento detalla el proceso de creación y validación de tres tablas en S
 
 ## **Creación de la Base de Datos**
 
-Antes de ejecutar cualquier código de tablas, la fábrica debe crear la base de datos Sispro_2025 y asegurarse de que están trabajando en ella:
-
-CREATE DATABASE Sispro_2025;
-
-USE Sispro_2025;
-
-## **2. Creación de la Base de Datos**
 Antes de ejecutar cualquier código de tablas, la fábrica debe crear la base de datos **Sispro_2025** y asegurarse de que están trabajando en ella.
 
 ```sql

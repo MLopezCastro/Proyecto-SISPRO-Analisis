@@ -11,11 +11,13 @@ CREATE DATABASE Sispro_2025;
 
 USE Sispro_2025;
 
-2. Creación de la Base de Datos
-Antes de ejecutar cualquier código de tablas, la fábrica debe crear la base de datos Sispro_2025 y asegurarse de que están trabajando en ella.
+## **2. Creación de la Base de Datos**
+Antes de ejecutar cualquier código de tablas, la fábrica debe crear la base de datos **Sispro_2025** y asegurarse de que están trabajando en ella.
 
+```sql
 CREATE DATABASE Sispro_2025;
 USE Sispro_2025;
+```
 
 
 ## **2. Estructura de las Tablas**

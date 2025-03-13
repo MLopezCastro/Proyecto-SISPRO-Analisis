@@ -3,6 +3,12 @@
 ## **1. Introducción**
 Este documento detalla el proceso de creación y validación de tres tablas en SQL Server: **ConCubo_2025**, **ConArbol_2025** y **VinculadaUnion_2025**. Se incluyen las decisiones tomadas, correcciones aplicadas y los scripts finales utilizados.
 
+2. Creación de la Base de Datos
+CREATE DATABASE Sispro_2025;
+USE Sispro_2025;
+
+Antes de ejecutar cualquier código de tablas, la fábrica debe crear la base de datos Sispro_2025 y asegurarse de que están trabajando en ella.
+
 ## **2. Estructura de las Tablas**
 Las tablas están diseñadas para almacenar datos de producción y vincular información clave entre ellas.
 

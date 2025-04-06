@@ -190,21 +190,6 @@ DIVIDE(SUM([Horas_Preparacion]), SUM([Horas_Produccion]))
 
 ---
 
-## 🌟 Próximos pasos (para la semana que viene)
-- Analizar los tiempos **programados** (desde `ConArbol`) y compararlos con los reales.
-- Agregar análisis cruzado con `VinculadaUnion` (dimensiones, códigos, productos).
-- Medir **eficiencia, desfasajes y razones de demoras**.
-
-
----
-
-## 📚 Experiencia Profesional (para LinkedIn)
-Podrías poner algo como:
-
-> Actualmente colaboro con una fábrica industrial, realizando un proyecto de optimización de tiempos de producción mediante SQL Server y Power BI. A partir de una base con registros no estandarizados, implementé lógicas de transformación para obtener KPIs reales y confiables. Estoy desarrollando visualizaciones interactivas para apoyar la toma de decisiones operativas.
-
----
-
 ## 🧾 Apéndice: Códigos completos de vistas SQL
 
 ### 🔹 1. `vista_ConCubo_2025`
@@ -275,9 +260,6 @@ JOIN vista_ProduccionPorOrden_2025 pr
 
 ---
 
-## 📄 Informe para la fábrica
-
-> "Con este análisis logramos eliminar la duplicación de tiempos de preparación cuando una orden se repite. Esto permite conocer el tiempo real invertido en preparación vs producción, algo que antes no se podía calcular. No hizo falta modificar las tablas originales ni invertir en desarrollos costosos. La información está lista para ser utilizada en Power BI y tomar decisiones reales."
 
 
 ---

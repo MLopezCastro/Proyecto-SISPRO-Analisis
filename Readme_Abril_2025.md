@@ -1157,5 +1157,35 @@ Validación cruzada ante dudas del equipo de planta.
 
 Revisión mensual de órdenes con múltiples bloques.
 
+-------------
+
+# Proyecto Medoro – Análisis de Eficiencia en Producción 2025
+
+📌 **Descripción general:**
+Este dashboard de Power BI analiza los tiempos de preparación y producción en una fábrica, identificando cuellos de botella, órdenes ineficientes y oportunidades de mejora operativa. Se construyó a partir de datos extraídos de SQL Server con múltiples problemas de origen (fechas desfasadas, datos duplicados, formatos mixtos).
+
+🔍 **Objetivos:**
+- Corregir la duplicación de tiempos de preparación.
+- Unificar eventos separados por OT.
+- Medir el impacto del tiempo de preparación sobre el tiempo total de producción por orden.
+- Crear visualizaciones interactivas que permitan filtrar por ID o fecha.
+
+📊 **Visualizaciones clave:**
+- Evolución temporal de horas de preparación y producción por evento.
+- Porcentaje de tiempo en modo preparación por orden (`% Prep`), incluyendo semáforo visual.
+- Dispersión entre horas de preparación y horas de producción (scatter plot).
+- Detalle por orden (tabla interactiva con tooltip personalizado).
+
+🧠 **Lógica aplicada:**
+- Se creó la medida `HorasProduccionTotalCorrecta_Medida` para evitar la duplicación por evento.
+- Se diseñó la medida `%TiempoModoPreparacion_Filtrado` para obtener un ratio preciso por orden sin distorsiones agregadas.
+- Se implementaron semáforos (verde/naranja/rojo) con reglas visuales por rangos (>10%, 5%-10%, <5%).
+
+🛠️ **Herramientas utilizadas:**
+- Power BI
+- SQL Server (conexión directa e import mode)
+- DAX para creación de medidas inteligentes
+- Excel (exportación para visualización externa)
+
 
 

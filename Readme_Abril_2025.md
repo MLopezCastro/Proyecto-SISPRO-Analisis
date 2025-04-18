@@ -869,33 +869,34 @@ Actualizar la lógica SQL para que:
 
 ---
 
-### 🔹 vista_PreparacionesReales_2025
-
-Esta vista resuelve un problema clave detectado durante la validación en planta:  
-Una misma orden puede ingresar **más de una vez a la máquina** en distintos momentos, y cada una de esas entradas requiere **un nuevo tiempo de preparación real**.  
-La vista anterior (`vista_PreparacionesUnicas_2025`) solo conservaba la primera ocurrencia, ignorando reinicios posteriores.
+¡Perfecto! Acá tenés el bloque en estilo README, para dejar completamente documentada la **vista corregida y definitiva** que resuelve el problema central del proyecto:
 
 ---
 
-#### 📌 Objetivo
+### 🔹 `vista_PreparacionesReales_2025`
 
-- Conservar **todas las preparaciones reales**, incluso cuando una OT vuelve a entrar después de ser interrumpida por otra.
-- Evitar contar varias veces preparaciones seguidas **sin interrupción** (por ejemplo, repeticiones dentro de una misma secuencia).
+Esta vista representa la versión más precisa y operativamente fiel del análisis de tiempos de preparación.  
+Corrige el principal error de versiones anteriores, donde se asumía erróneamente que una orden (OT) solo requería preparación en su primera aparición.
 
 ---
 
-#### 📐 Lógica aplicada
+#### 📌 Motivación
 
-- Se parte de la tabla original `ConCubo` filtrada por:
-  - Año 2025  
-  - Máquina 201  
-  - Estado = 'Preparación'
-- Se extrae el número limpio del ID (`ID_Limpio`)
-- Se ordenan cronológicamente los registros por `Inicio` y se usa `LAG()` para ver cuál fue la orden anterior.
-- Se marca como preparación válida (`FlagPreparacionValida = 1`) **solo si la orden cambió respecto a la anterior**.
-- Luego, se calcula `HorasPreparacionAjustada`, que:
-  - Toma el valor real solo si el `FlagPreparacionValida = 1`
-  - Devuelve 0 si es una repetición continua de la misma OT
+En la práctica, una misma orden (`ID_Limpio`) puede entrar **más de una vez a la máquina** y **cada ingreso posterior requiere una nueva preparación**, **si fue interrumpida por otra orden en el medio**.  
+Esto no era contemplado por la lógica anterior (`ROW_NUMBER()`), que sólo consideraba la primera ocurrencia.
+
+---
+
+#### 🧠 Lógica aplicada
+
+- Se parte de la tabla original `ConCubo`, filtrando por año 2025, estado `Preparación` y máquina 201.
+- Se calcula `ID_Limpio` para estandarizar el campo.
+- Se ordenan cronológicamente los registros por `Inicio`.
+- Se usa la función `LAG()` para obtener la orden anterior (por `ID_Limpio`).
+- Se marca como preparación válida (`FlagPreparacionValida = 1`) cada vez que **la orden actual es distinta a la anterior**.
+- Se crea una nueva columna `HorasPreparacionAjustada` que:
+  - Toma el tiempo real solo si `Flag = 1`
+  - Devuelve 0 si la OT es repetida sin interrupciones
 
 ---
 
@@ -906,18 +907,25 @@ La vista anterior (`vista_PreparacionesUnicas_2025`) solo conservaba la primera 
 | `ID`                       | Identificador original del sistema                                          |
 | `ID_Limpio`                | Versión numérica del ID                                                     |
 | `HorasPreparacionOriginal`| Tiempo real registrado en cada evento de preparación                        |
-| `HorasPreparacionAjustada`| Tiempo corregido: solo cuando hay cambio de orden                           |
+| `HorasPreparacionAjustada`| Tiempo corregido: solo cuando hubo interrupción con otra OT                 |
 | `Inicio_Legible`           | Fecha y hora de inicio legible                                              |
 | `Fin_Legible`              | Fecha y hora de fin legible                                                 |
-| `FlagPreparacionValida`   | 1 si la orden cambió y requiere setup, 0 si es continuación de la misma OT  |
+| `FlagPreparacionValida`   | 1 si la orden cambió respecto a la anterior, 0 si es continuación directa   |
 
 ---
 
-#### ✅ Ventaja sobre versiones anteriores
+#### ✅ Ejemplo real
 
-Esta vista permite conservar **todas las preparaciones necesarias**, pero evitando la **duplicación excesiva**.  
-Ya no se omite ninguna orden que haya sido **interrumpida y reiniciada**, algo que sí ocurría con el modelo anterior.
+| ID_Limpio | Inicio_Legible        | HorasPreparacionOriginal | FlagPreparacionValida | HorasPreparacionAjustada |
+|-----------|------------------------|---------------------------|------------------------|----------------------------|
+| 14292     | 2025-01-12 02:00:34    | 0.1959                    | 1                      | 0.1959                     |
+| 14292     | 2025-01-18 07:45:50    | 0.4120                    | 1                      | 0.4120                     |
+| 14292     | 2025-01-18 12:04:28    | 0.4120                    | 0                      | 0                          |
+| 14292     | 2025-01-22 17:36:15    | 0.1421                    | 1                      | 0.1421                     |
 
+Este caso muestra cómo una misma OT puede aparecer múltiples veces, pero solo aquellas entradas **separadas por otra OT** (u operativamente distintas) generan una nueva preparación real.
+
+---
 
 
 

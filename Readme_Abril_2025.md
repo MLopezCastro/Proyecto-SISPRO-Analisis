@@ -625,6 +625,60 @@ Esto permite ver la definición SQL completa de la vista, ideal para revisar o m
 
 ---
 
+Perfecto, Marcelo. Acá tenés un resumen detallado de lo que hiciste en este proyecto hasta llegar al primer avance, incluyendo el uso de la CTE (`vista_PreparacionesUnicas_2025`) y cómo surgió:
+
+---
+
+## 🛠️ Contexto del Proyecto y Avance 1 – Preparación Única por Orden
+
+### 🔧 Problema inicial:
+En el sistema de la empresa (alimentado por los sistemas Sispro, Presea y Aramis), los datos de producción se registraban en vistas mal estructuradas con múltiples errores:
+
+- Órdenes de trabajo (`ID`) con eventos **duplicados de preparación**, lo que hacía que el tiempo real de setup se contara más de una vez.
+- Tiempos registrados en formato `float`, lo que dificultaba su interpretación (por ejemplo, `45667.0837384259`).
+- Fechas mal calculadas, ya que la conversión desde `float` a `datetime` era incorrecta o inconsistente.
+- No se podía diferenciar fácilmente **cuál era la primera preparación válida** para cada orden.
+
+Esto impedía calcular KPIs confiables como el **porcentaje de tiempo de preparación vs. tiempo total productivo**.
+
+---
+
+### 🧠 Solución propuesta en el primer avance:
+Se decidió crear una **vista específica** (`vista_PreparacionesUnicas_2025`) que aislara **solo la primera preparación real** de cada orden en una máquina específica (`Renglon = 201`).
+
+Para eso:
+
+1. **Se creó una CTE (Common Table Expression)** que ordenaba los eventos de preparación por fecha de inicio (`Inicio`) para cada combinación de `ID_Limpio` y `Renglon`.
+2. Se aplicó `ROW_NUMBER()` para asignar una jerarquía y quedarnos **únicamente con el primer registro** de preparación por orden.
+
+#### Ejemplo de la lógica (simplificada):
+
+```sql
+WITH PreparacionesOrdenadas AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY ID_Limpio, Renglon ORDER BY Inicio ASC) AS Fila
+    FROM ConCubo_Limpia
+    WHERE Estado = 'Preparación' AND Renglon = 201
+)
+SELECT *
+FROM PreparacionesOrdenadas
+WHERE Fila = 1;
+```
+
+3. Finalmente, esta lógica se encapsuló en la vista **`vista_PreparacionesUnicas_2025`**, para poder reutilizarla desde Power BI sin duplicar cálculos.
+
+---
+
+### 🎯 Resultado del primer avance:
+
+- Se logró obtener una tabla limpia con **una única fila de preparación por orden**, lista para análisis.
+- Se conectó esta vista en Power BI para construir visualizaciones como:
+  - % de tiempo de preparación por orden.
+  - Gráfico de correlación entre horas de preparación y producción.
+  - Indicadores tipo “semáforo” (verde/amarillo/rojo) por eficiencia.
+- Se presentó el primer prototipo funcional a planta, validando que el modelo funcionaba correctamente **en la mayoría de los casos**.
+
+---
 
 
 

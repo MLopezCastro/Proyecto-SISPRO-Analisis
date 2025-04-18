@@ -1187,5 +1187,23 @@ Este dashboard de Power BI analiza los tiempos de preparación y producción en 
 - DAX para creación de medidas inteligentes
 - Excel (exportación para visualización externa)
 
+-------------
+
+![image](https://github.com/user-attachments/assets/d7c88408-4dff-4fc2-9f6d-2f4f7b5b211f)
+
+![image](https://github.com/user-attachments/assets/cd7b2d7d-ae0a-4b4c-a2ad-56a470af3122)
+
+![image](https://github.com/user-attachments/assets/972794c9-3124-4baa-b0c1-5b2380531b49)
+
+![image](https://github.com/user-attachments/assets/26e0c1ac-2e7a-4fd7-9a08-79680d6cc12e)
+
+![image](https://github.com/user-attachments/assets/1be051e1-8da3-43db-a2e5-94b824457648)
+
+![image](https://github.com/user-attachments/assets/49742bfd-421d-4715-8812-b7a9b6949b8d)
+
+
+
+
+
 
 

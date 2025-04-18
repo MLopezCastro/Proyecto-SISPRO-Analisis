@@ -680,6 +680,41 @@ WHERE Fila = 1;
 
 ---
 
+¡Perfecto! Acá tenés el texto en estilo README, claro y técnico, para documentar la nueva vista `vista_PreparacionesAjustadas_2025`:
+
+---
+
+### 🔹 `vista_PreparacionesAjustadas_2025`
+
+Esta vista muestra **todos los bloques reales de preparación** registrados en el sistema durante el año 2025 para la máquina con `Renglon = 201`, pero evita que los tiempos de preparación se sumen más de una vez por orden.
+
+📌 **Motivación**:  
+En los datos originales, una misma orden (`ID_Limpio`) puede entrar más de una vez a la máquina y generar múltiples registros de “Preparación”. Si se suman todos, los KPIs quedan distorsionados. Esta vista permite visualizar **todas las ocurrencias reales**, pero con una columna ajustada para que **solo la primera sea considerada en los cálculos de tiempo real**.
+
+📐 **Lógica aplicada**:
+- Se utiliza una CTE con `ROW_NUMBER()` para numerar cada preparación por `ID_Limpio` y `Renglon`.
+- Se crea una columna `HorasPreparacionAjustada`, que:
+  - Toma el valor real de `CantidadHoras` solo en la primera ocurrencia (`nro_vez = 1`)
+  - Asigna 0 a las repeticiones
+
+🧾 **Columnas principales**:
+| Columna                  | Descripción                                              |
+|--------------------------|----------------------------------------------------------|
+| `ID`                    | Orden original del sistema                                |
+| `ID_Limpio`             | Versión numérica del ID                                   |
+| `Estado`                | Siempre 'Preparación'                                     |
+| `CantidadHoras`         | Tiempo original registrado para esa preparación           |
+| `HorasPreparacionAjustada` | Tiempo ajustado para evitar duplicaciones               |
+| `Inicio_Legible`        | Fecha y hora de inicio (formato legible)                  |
+| `Fin_Legible`           | Fecha y hora de fin (formato legible)                     |
+| `nro_vez`               | Número de ocurrencia dentro de la misma orden             |
+
+🧠 **Uso esperado**:
+- En Power BI, usar `HorasPreparacionAjustada` para calcular KPIs.
+- `CantidadHoras` queda disponible para análisis exploratorios, sin afectar los indicadores.
+
+---
+
 
 
 

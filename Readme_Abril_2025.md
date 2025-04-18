@@ -788,8 +788,62 @@ En cambio, para órdenes que solo tienen una preparación, los valores coinciden
 
 ---
 
+Vamos a **agregar el campo `Inicio_Legible_Corregido`** directamente en la vista `vista_PreparacionesAjustadas_2025` para reflejar el ajuste de -2 días sin alterar la lógica existente.
+
+
+## 🛠️ Código actualizado para la vista
+
+```sql
+CREATE OR ALTER VIEW vista_PreparacionesAjustadas_2025 AS
+WITH PreparacionesOrdenadas AS (
+    SELECT 
+        ID,
+        TRY_CAST(SUBSTRING(ID, PATINDEX('%[0-9]%', ID), LEN(ID)) AS INT) AS ID_Limpio,
+        Renglon,
+        Estado,
+        CantidadHoras AS HorasPreparacionOriginal,
+        CAST(Inicio AS DATETIME) AS Inicio_Legible,
+        DATEADD(DAY, -2, CAST(Inicio AS DATETIME)) AS Inicio_Legible_Corregido,
+        CAST(Fin AS DATETIME) AS Fin_Legible,
+        ROW_NUMBER() OVER (
+            PARTITION BY TRY_CAST(SUBSTRING(ID, PATINDEX('%[0-9]%', ID), LEN(ID)) AS INT), Renglon
+            ORDER BY CAST(Inicio AS DATETIME)
+        ) AS nro_vez
+    FROM ConCubo
+    WHERE 
+        Estado = 'Preparación' AND
+        TRY_CAST(Renglon AS INT) = 201 AND
+        AnoInicio = 2025
+)
+SELECT 
+    ID,
+    ID_Limpio,
+    Renglon,
+    Estado,
+    HorasPreparacionOriginal,
+    CASE WHEN nro_vez = 1 THEN HorasPreparacionOriginal ELSE 0 END AS HorasPreparacionAjustada,
+    Inicio_Legible,
+    Inicio_Legible_Corregido,
+    Fin_Legible,
+    nro_vez
+FROM PreparacionesOrdenadas;
+```
+
+#### 🛠️ Ajuste de desfase en fechas
+
+Durante las validaciones realizadas con el equipo de planta, se detectó un **desfase sistemático de +2 días** en la columna `Inicio_Legible`. Si bien la hora era correcta, la fecha no coincidía con el registro real de ingreso en máquina (`DiaInicio`), tal como se reportó en órdenes como la **OT 14292**.
+
+Para preservar la trazabilidad del dato original y al mismo tiempo ofrecer una versión corregida para análisis, se agregó una nueva columna:
+
+| Columna                   | Descripción                                                 |
+|---------------------------|-------------------------------------------------------------|
+| `Inicio_Legible_Corregido` | Fecha y hora ajustada, restando 2 días al campo original    |
+
+El ajuste se aplica de forma segura con `DATEADD(DAY, -2, Inicio_Legible)`, manteniendo la hora exacta.  
+Esto permite comparar ambas fechas en Power BI y verificar fácilmente la diferencia.
 
 ---
+
 
 
 

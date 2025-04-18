@@ -1130,5 +1130,32 @@ En este ejemplo:
 
 ✅ Esta lógica permite calcular el tiempo de preparación de manera realista y sin duplicaciones, reflejando correctamente el trabajo operativo en planta.
 
+----
+
+![image](https://github.com/user-attachments/assets/61880c30-67e6-460f-b4fb-3cd565d57733)
+
+
+✅ Ejemplo validado (orden 14470)
+
+Seleccionando la orden 14470, que tiene múltiples bloques de preparación el mismo día (2025-01-02):
+
+El primer bloque (12:30:26) tiene HorasPreparacionAjustada > 0 y FlagPreparacionValida = 1 ✅
+
+Los siguientes bloques tienen valor 0 en la columna ajustada 🔁
+
+El gráfico de columnas muestra correctamente una sola barra roja con altura > 0.
+
+Esto confirma que el modelo SQL y el dashboard trabajan en conjunto para evitar duplicaciones y reflejar fielmente la lógica deseada por planta.
+
+🔧 Recomendación
+
+Esta pestaña debe mantenerse para:
+
+Auditoría visual.
+
+Validación cruzada ante dudas del equipo de planta.
+
+Revisión mensual de órdenes con múltiples bloques.
+
 
 

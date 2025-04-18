@@ -869,6 +869,55 @@ Actualizar la lógica SQL para que:
 
 ---
 
+### 🔹 vista_PreparacionesReales_2025
+
+Esta vista resuelve un problema clave detectado durante la validación en planta:  
+Una misma orden puede ingresar **más de una vez a la máquina** en distintos momentos, y cada una de esas entradas requiere **un nuevo tiempo de preparación real**.  
+La vista anterior (`vista_PreparacionesUnicas_2025`) solo conservaba la primera ocurrencia, ignorando reinicios posteriores.
+
+---
+
+#### 📌 Objetivo
+
+- Conservar **todas las preparaciones reales**, incluso cuando una OT vuelve a entrar después de ser interrumpida por otra.
+- Evitar contar varias veces preparaciones seguidas **sin interrupción** (por ejemplo, repeticiones dentro de una misma secuencia).
+
+---
+
+#### 📐 Lógica aplicada
+
+- Se parte de la tabla original `ConCubo` filtrada por:
+  - Año 2025  
+  - Máquina 201  
+  - Estado = 'Preparación'
+- Se extrae el número limpio del ID (`ID_Limpio`)
+- Se ordenan cronológicamente los registros por `Inicio` y se usa `LAG()` para ver cuál fue la orden anterior.
+- Se marca como preparación válida (`FlagPreparacionValida = 1`) **solo si la orden cambió respecto a la anterior**.
+- Luego, se calcula `HorasPreparacionAjustada`, que:
+  - Toma el valor real solo si el `FlagPreparacionValida = 1`
+  - Devuelve 0 si es una repetición continua de la misma OT
+
+---
+
+#### 🧾 Columnas clave
+
+| Columna                    | Descripción                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `ID`                       | Identificador original del sistema                                          |
+| `ID_Limpio`                | Versión numérica del ID                                                     |
+| `HorasPreparacionOriginal`| Tiempo real registrado en cada evento de preparación                        |
+| `HorasPreparacionAjustada`| Tiempo corregido: solo cuando hay cambio de orden                           |
+| `Inicio_Legible`           | Fecha y hora de inicio legible                                              |
+| `Fin_Legible`              | Fecha y hora de fin legible                                                 |
+| `FlagPreparacionValida`   | 1 si la orden cambió y requiere setup, 0 si es continuación de la misma OT  |
+
+---
+
+#### ✅ Ventaja sobre versiones anteriores
+
+Esta vista permite conservar **todas las preparaciones necesarias**, pero evitando la **duplicación excesiva**.  
+Ya no se omite ninguna orden que haya sido **interrumpida y reiniciada**, algo que sí ocurría con el modelo anterior.
+
 
 
 

@@ -738,7 +738,57 @@ Esta vista soluciona ese problema permitiendo:
 
 ---
 
-¿Querés que también prepare la versión en inglés para GitHub o LinkedIn?
+¡Excelente, Marcelo! Acá tenés el bloque completo para **continuar y cerrar la sección del README**, con la parte de validación incluida —todo en el mismo estilo profesional que venís usando:
+
+---
+
+#### ✅ Validación y ejemplo real
+
+Para verificar que esta vista resuelve correctamente el problema de la duplicación de tiempos de preparación, se realizó una auditoría comparando:
+
+- `TotalOriginal`: suma de `HorasPreparacionOriginal` por orden.  
+- `TotalAjustado`: suma de `HorasPreparacionAjustada` por orden.
+
+El siguiente ejemplo muestra cómo las órdenes con múltiples eventos de preparación fueron correctamente ajustadas:
+
+| `ID_Limpio` | `TotalOriginal` | `TotalAjustado` |
+|-------------|------------------|------------------|
+| 14292       | 1.1621           | 0.1959           |
+| 14454       | 0.2564           | 0.1282           |
+| 14470       | 1.3899           | 0.1985           |
+| 14581       | 1.4617           | 0.2088           |
+| 14586       | 0.4239           | 0.0716           |
+| 14597       | 1.3430           | 0.2686           |
+| 14609       | 1.7943           | 0.8971           |
+| 14610       | 1.5219           | 0.3044           |
+| 14613       | 0.6500           | 0.2167           |
+| 14619       | 1.2898           | 0.4059           |
+| 14620       | 0.5786           | 0.3659           |
+| 14626       | 1.2741           | 0.5779           |
+| 14631       | 0.1831           | 0.0677           |
+| 14641       | 1.6242           | 0.3248           |
+| 14654       | 0.2811           | 0.1406           |
+
+Esto confirma que:
+
+- Solo se conserva el tiempo de la primera preparación por orden.  
+- El resto de las ocurrencias son conservadas en el análisis, pero no duplican los KPIs.
+
+En cambio, para órdenes que solo tienen una preparación, los valores coinciden:
+
+| `ID_Limpio` | `TotalOriginal` | `TotalAjustado` |
+|-------------|------------------|------------------|
+| 14594       | 0.2713           | 0.2713           |
+| 14603       | 0.3991           | 0.3991           |
+| 14617       | 0.3085           | 0.3085           |
+
+---
+
+✅ Esto demuestra que la vista `vista_PreparacionesAjustadas_2025` **corrige el problema sin perder datos reales**, y está lista para ser integrada en Power BI o futuros modelos.
+
+---
+
+
 ---
 
 

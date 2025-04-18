@@ -869,10 +869,6 @@ Actualizar la lógica SQL para que:
 
 ---
 
-¡Perfecto! Acá tenés el bloque en estilo README, para dejar completamente documentada la **vista corregida y definitiva** que resuelve el problema central del proyecto:
-
----
-
 ### 🔹 `vista_PreparacionesReales_2025`
 
 Esta vista representa la versión más precisa y operativamente fiel del análisis de tiempos de preparación.  
@@ -924,6 +920,66 @@ Esto no era contemplado por la lógica anterior (`ROW_NUMBER()`), que sólo cons
 | 14292     | 2025-01-22 17:36:15    | 0.1421                    | 1                      | 0.1421                     |
 
 Este caso muestra cómo una misma OT puede aparecer múltiples veces, pero solo aquellas entradas **separadas por otra OT** (u operativamente distintas) generan una nueva preparación real.
+
+---
+
+### 🔄 `vista_PreparacionesReales_2025` – Preparaciones ajustadas sin errores de conversión
+
+Esta vista es una evolución de `vista_PreparacionesAjustadas_2025`, pensada para corregir dos problemas fundamentales:
+
+1. ✅ Evitar errores de conversión causados por valores no numéricos en el campo `ID` (por ejemplo, `"Rotatek 700"`).
+2. ✅ Preparar la estructura para escalar el análisis a **todo el año 2025 y todas las máquinas**, eliminando el filtro exclusivo por `Renglon = 201`.
+
+---
+
+### 📌 Motivación
+
+En la base `ConCubo`, el campo `ID` contiene valores mixtos (por ejemplo: `"FAM 14602"`, `"Rotatek 700"`, `"14470"`).  
+Al intentar convertir estos valores a números (`INT`) para analizar las órdenes, SQL arrojaba errores de conversión.
+
+Para solucionarlo:
+
+- Se incorporó una condición con `PATINDEX('%[0-9]%', ID)` para **incluir solo las filas cuyo ID contenga números**.
+- Se mantuvo el uso de `TRY_CAST()` para transformar los valores extraídos en `ID_Limpio`.
+
+---
+
+### 📐 Lógica aplicada
+
+```sql
+WHERE Estado = 'Preparación'
+  AND PATINDEX('%[0-9]%', ID) > 0
+```
+
+Esto asegura que el motor SQL **nunca intente castear un ID que no tenga números**, evitando así errores del tipo:
+
+```
+Conversion failed when converting the varchar value 'Rotatek 700' to data type int
+```
+
+---
+
+### 🧾 Columnas principales
+
+| Columna                 | Descripción                                                       |
+|-------------------------|-------------------------------------------------------------------|
+| `ID`                    | Orden original del sistema (texto mixto)                          |
+| `ID_Limpio`             | Valor numérico extraído del ID (solo si contiene dígitos)         |
+| `Estado`                | Siempre `"Preparación"`                                           |
+| `HorasPreparacionOriginal` | Tiempo real registrado en cada bloque de preparación           |
+| `HorasPreparacionAjustada` | Solo conserva el valor si es la primera vez que aparece la orden |
+| `FlagPreparacionValida`| 1 si es la primera ocurrencia de esa orden, 0 en repeticiones     |
+| `nro_vez`               | Número de ocurrencia según fecha/hora                             |
+| `Inicio_Legible`        | Fecha y hora de inicio (cast de float a datetime)                 |
+| `Fin_Legible`           | Fecha y hora de fin                                               |
+
+---
+
+### 🧠 Uso recomendado
+
+- **En Power BI**, usar `HorasPreparacionAjustada` para KPI de eficiencia.
+- Usar `FlagPreparacionValida = 1` como filtro si se desea trabajar solo con primeras ocurrencias.
+- Mantener `HorasPreparacionOriginal` para auditoría y análisis exploratorio.
 
 ---
 

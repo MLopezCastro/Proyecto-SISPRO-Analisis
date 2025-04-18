@@ -582,6 +582,50 @@ WHERE TRY_CAST(Inicio AS DATETIME) BETWEEN '2025-01-12' AND '2025-01-13'
 
 ✅ Documento actualizado – Abril 2025
 
+---------------
+
+¡Por supuesto! Acá tenés la explicación lista para pegar en tu `README.md`, escrita de forma clara y profesional:
+
+---
+
+### 🔎 Cómo encontrar vistas (`views`) en SQL Server Management Studio (SSMS)
+
+En SQL Server, las vistas no aparecen en la misma sección que las tablas. Para acceder a ellas:
+
+1. Abrir el **Object Explorer** (panel izquierdo en SSMS).
+2. Navegar hasta la base de datos deseada (por ejemplo, `Sispro_Restaurada_ML`).
+3. Expandir el nodo de la base de datos.
+4. Expandir la carpeta **Views** para ver todas las vistas disponibles, como por ejemplo `dbo.vista_PreparacionesUnicas_2025`.
+
+#### 🧠 Si no se recuerda el nombre exacto de la vista:
+Ejecutar la siguiente consulta para listar todas las vistas:
+
+```sql
+SELECT name 
+FROM sys.views
+ORDER BY name;
+```
+
+O bien, buscar por palabra clave (por ejemplo, "preparaciones"):
+
+```sql
+SELECT name 
+FROM sys.views
+WHERE name LIKE '%preparaciones%';
+```
+
+#### 🔧 Sugerencia:
+Hacer clic derecho sobre una vista y seleccionar:
+
+```
+Script View as → SELECT To → New Query Editor Window
+```
+
+Esto permite ver la definición SQL completa de la vista, ideal para revisar o modificar su lógica.
+
+---
+
+¿Querés que también te prepare una sección aparte para explicar cómo versionaste esta vista (`vista_PreparacionesUnicas_2025`) o los cambios que hiciste para corregir los errores reportados por fábrica?
 
 
 

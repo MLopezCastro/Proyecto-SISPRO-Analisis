@@ -684,35 +684,61 @@ WHERE Fila = 1;
 
 ---
 
+¡Genial, Marcelo! Acá tenés el **bloque actualizado** para tu README con la corrección que faltaba (agregar la columna `HorasPreparacionOriginal`), manteniendo el mismo estilo profesional y técnico:
+
+---
+
 ### 🔹 `vista_PreparacionesAjustadas_2025`
 
-Esta vista muestra **todos los bloques reales de preparación** registrados en el sistema durante el año 2025 para la máquina con `Renglon = 201`, pero evita que los tiempos de preparación se sumen más de una vez por orden.
+Esta vista muestra todos los bloques reales de **preparación** registrados en el sistema durante el año 2025 para la máquina con `Renglon = 201`, pero evita que los **tiempos de preparación se sumen más de una vez por orden**.
 
-📌 **Motivación**:  
-En los datos originales, una misma orden (`ID_Limpio`) puede entrar más de una vez a la máquina y generar múltiples registros de “Preparación”. Si se suman todos, los KPIs quedan distorsionados. Esta vista permite visualizar **todas las ocurrencias reales**, pero con una columna ajustada para que **solo la primera sea considerada en los cálculos de tiempo real**.
+---
 
-📐 **Lógica aplicada**:
-- Se utiliza una CTE con `ROW_NUMBER()` para numerar cada preparación por `ID_Limpio` y `Renglon`.
-- Se crea una columna `HorasPreparacionAjustada`, que:
-  - Toma el valor real de `CantidadHoras` solo en la primera ocurrencia (`nro_vez = 1`)
-  - Asigna 0 a las repeticiones
+#### 📌 Motivación
 
-🧾 **Columnas principales**:
-| Columna                  | Descripción                                              |
-|--------------------------|----------------------------------------------------------|
-| `ID`                    | Orden original del sistema                                |
-| `ID_Limpio`             | Versión numérica del ID                                   |
-| `Estado`                | Siempre 'Preparación'                                     |
-| `CantidadHoras`         | Tiempo original registrado para esa preparación           |
-| `HorasPreparacionAjustada` | Tiempo ajustado para evitar duplicaciones               |
-| `Inicio_Legible`        | Fecha y hora de inicio (formato legible)                  |
-| `Fin_Legible`           | Fecha y hora de fin (formato legible)                     |
-| `nro_vez`               | Número de ocurrencia dentro de la misma orden             |
+En los datos originales, una misma orden (`ID_Limpio`) puede ingresar múltiples veces a la máquina en diferentes momentos del día, generando **varios registros** con estado `Preparación`.  
+Si se suman todos, los indicadores de eficiencia se **sobreestiman**.  
+Esta vista soluciona ese problema permitiendo:
 
-🧠 **Uso esperado**:
-- En Power BI, usar `HorasPreparacionAjustada` para calcular KPIs.
-- `CantidadHoras` queda disponible para análisis exploratorios, sin afectar los indicadores.
+- Visualizar **todos los eventos reales**,  
+- Pero considerar **solo la primera ocurrencia por orden** en el cálculo de horas efectivas de preparación.
 
+---
+
+#### 📐 Lógica aplicada
+
+- Se parte de `vista_ConCubo_2025`, que contiene todos los registros de la máquina 201 durante 2025.
+- Se crea una CTE con `ROW_NUMBER()` para enumerar las ocurrencias de preparación por `ID_Limpio` y `Renglon`.
+- Se agregan dos columnas clave:
+  - `HorasPreparacionOriginal`: mantiene el valor original de `CantidadHoras`.
+  - `HorasPreparacionAjustada`: mantiene el valor **solo si** es la primera vez (`nro_vez = 1`), y devuelve `0` en los siguientes.
+
+---
+
+#### 🧾 Columnas principales
+
+| Columna                  | Descripción                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| `ID`                     | Identificador de orden original                                             |
+| `ID_Limpio`              | Versión numérica del ID                                                     |
+| `Renglon`                | Máquina analizada (201)                                                     |
+| `Estado`                 | Siempre `"Preparación"`                                                     |
+| `HorasPreparacionOriginal` | Valor original de `CantidadHoras` para cada bloque                        |
+| `HorasPreparacionAjustada` | Valor corregido: solo se conserva en la primera ocurrencia                |
+| `Inicio_Legible`         | Fecha y hora de inicio en formato legible                                   |
+| `Fin_Legible`            | Fecha y hora de fin en formato legible                                      |
+| `nro_vez`                | Número de ocurrencia de preparación para esa orden                          |
+
+---
+
+#### 🧠 Uso esperado
+
+- En Power BI, **usar `HorasPreparacionAjustada`** para calcular KPIs (porcentaje de preparación, eficiencia, etc.).
+- `HorasPreparacionOriginal` queda disponible para **análisis exploratorio**, por ejemplo, para auditar cuántas veces se repite una OT y en qué horarios.
+
+---
+
+¿Querés que también prepare la versión en inglés para GitHub o LinkedIn?
 ---
 
 

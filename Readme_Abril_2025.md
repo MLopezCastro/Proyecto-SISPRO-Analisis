@@ -983,5 +983,28 @@ Conversion failed when converting the varchar value 'Rotatek 700' to data type i
 
 ---
 
+### 🛠 Mejora: Columna `Inicio_Legible_Corregido` para ajuste de desfase de fechas
+
+🔹 **Objetivo del cambio**  
+Durante la validación con el equipo de planta se detectó un problema en los datos de la columna `Inicio_Legible`, donde todas las fechas de preparación estaban corridas dos días adelante respecto a la fecha real de ingreso en máquina. Esto se debía a inconsistencias en el origen del campo `Inicio` (formato float tipo Excel).
+
+🔹 **Solución implementada**  
+Se agregó una nueva columna a la vista `vista_PreparacionesReales_2025` que corrige ese desfase restando dos días a la fecha legible original:
+
+```sql
+DATEADD(DAY, -2, Inicio_Legible) AS Inicio_Legible_Corregido
+```
+
+🔹 **Ventajas**  
+- Se mantiene la trazabilidad del dato original (`Inicio_Legible`).
+- Se dispone ahora del dato corregido (`Inicio_Legible_Corregido`) para visualización en Power BI.
+- Permite filtrar, ordenar y construir visualizaciones más precisas según la fecha real de operación.
+
+🧠 **Recomendación de uso en Power BI**  
+- Usar `Inicio_Legible_Corregido` en los slicers y visuales de fecha (en lugar de `Inicio_Legible`).
+- En caso de análisis comparativo, puede mostrarse junto a la fecha original para ver la diferencia.
+
+---
+
 
 

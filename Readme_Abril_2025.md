@@ -1006,5 +1006,86 @@ DATEADD(DAY, -2, Inicio_Legible) AS Inicio_Legible_Corregido
 
 ---
 
+### ✅ Actualización – Vista `vista_PreparacionesReales_2025` (Evitar jerarquía de fechas en Power BI)
+
+En Power BI, al importar una columna del tipo `DATETIME`, se genera automáticamente una jerarquía (`Año`, `Mes`, `Día`, etc.).  
+Esto **interfiere con la visualización directa del campo con hora incluida**, que es clave para este análisis.
+
+🛠️ Para resolverlo, se agregó a la vista una nueva columna auxiliar:  
+`Inicio_Legible_Corregido_Texto`, que convierte la fecha y hora a formato `VARCHAR(19)` (ejemplo: `2025-01-12 02:00:34`).
+
+---
+
+#### 🧾 Columnas añadidas
+
+| Columna                       | Tipo      | Descripción                                                  |
+|-------------------------------|-----------|--------------------------------------------------------------|
+| `Inicio_Legible_Corregido`    | `DATETIME`| Fecha y hora corregidas (-2 días respecto a `Inicio`)        |
+| `Inicio_Legible_Corregido_Texto` | `VARCHAR` | Versión en texto plano, **sin jerarquía**, ideal para slicers o tablas |
+
+---
+
+#### 🧠 Uso recomendado en Power BI
+
+- Usar `Inicio_Legible_Corregido_Texto` para **mostrar la fecha y hora reales** en gráficos, tablas y slicers, evitando que Power BI aplique jerarquías.
+- Usar `Inicio_Legible_Corregido` únicamente como **columna de ordenamiento** si se requiere ordenar correctamente por fecha.
+
+---
+
+### 💾 Código actualizado de la vista
+
+```sql
+ALTER VIEW vista_PreparacionesReales_2025 AS
+WITH PreparacionesEnumeradas AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY ID_Limpio, Renglon ORDER BY Inicio_Legible) AS nro_vez
+    FROM vista_ConCubo_2025
+    WHERE Estado = 'Preparación'
+),
+PreparacionesValidadas AS (
+    SELECT *,
+           CASE 
+               WHEN nro_vez = 1 THEN CantidadHoras
+               WHEN EXISTS (
+                   SELECT 1
+                   FROM vista_ConCubo_2025 v2
+                   WHERE v2.ID_Limpio = p.ID_Limpio
+                     AND v2.Renglon = p.Renglon
+                     AND v2.Inicio_Legible < p.Inicio_Legible
+                     AND v2.Estado = 'Producción'
+               ) THEN CantidadHoras
+               ELSE 0
+           END AS HorasPreparacionAjustada,
+           CASE 
+               WHEN nro_vez = 1 THEN 1
+               WHEN EXISTS (
+                   SELECT 1
+                   FROM vista_ConCubo_2025 v2
+                   WHERE v2.ID_Limpio = p.ID_Limpio
+                     AND v2.Renglon = p.Renglon
+                     AND v2.Inicio_Legible < p.Inicio_Legible
+                     AND v2.Estado = 'Producción'
+               ) THEN 1
+               ELSE 0
+           END AS FlagPreparacionValida
+    FROM PreparacionesEnumeradas p
+)
+SELECT 
+    ID,
+    ID_Limpio,
+    Renglon,
+    Estado,
+    CantidadHoras AS HorasPreparacionOriginal,
+    HorasPreparacionAjustada,
+    FlagPreparacionValida,
+    Inicio_Legible,
+    Fin_Legible,
+    DATEADD(DAY, -2, Inicio_Legible) AS Inicio_Legible_Corregido,
+    CONVERT(VARCHAR(19), DATEADD(DAY, -2, Inicio_Legible), 120) AS Inicio_Legible_Corregido_Texto,
+    nro_vez
+FROM PreparacionesValidadas;
+```
+
+📌 Esta vista queda lista para ser usada en Power BI sin problemas de jerarquía y mostrando correctamente fecha y hora.
 
 

@@ -845,6 +845,30 @@ Esto permite comparar ambas fechas en Power BI y verificar fácilmente la difere
 ---
 
 
+### 🔁 Revisión crítica del criterio de "Preparación Única"
+
+Durante el análisis de resultados y la validación con planta, se detectó que el criterio anterior —conservar solo la **primera ocurrencia** de estado `Preparación` por `ID_Limpio` y `Renglón`— es **incorrecto** desde el punto de vista operativo.
+
+#### ❌ Problema:
+No es cierto que una orden (OT) solo requiera preparación una vez. Si una misma orden vuelve a ingresar a la máquina después de haber sido interrumpida por otra, **se debe volver a preparar** la máquina.
+
+#### 🛠 Criterio corregido:
+Se deben conservar **todas las preparaciones válidas** de una misma OT **si hubo otra OT intermedia** en la máquina.  
+Por ejemplo:
+
+- Entra OT 14292 → preparación válida
+- Cambia a OT 14454 → preparación válida
+- Vuelve OT 14292 → preparación válida también ✅
+
+#### 🎯 Nuevo objetivo:
+Actualizar la lógica SQL para que:
+
+- Se detecten **reinicios de una misma OT**.
+- Se conserve la preparación si hubo otra OT distinta entre medio (por `Renglón`).
+- Se ignore si son preparaciones repetidas sin cambio de orden.
+
+---
+
 
 
 

@@ -625,7 +625,6 @@ Esto permite ver la definición SQL completa de la vista, ideal para revisar o m
 
 ---
 
-¿Querés que también te prepare una sección aparte para explicar cómo versionaste esta vista (`vista_PreparacionesUnicas_2025`) o los cambios que hiciste para corregir los errores reportados por fábrica?
 
 
 

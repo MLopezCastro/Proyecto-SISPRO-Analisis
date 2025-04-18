@@ -1088,4 +1088,47 @@ FROM PreparacionesValidadas;
 
 📌 Esta vista queda lista para ser usada en Power BI sin problemas de jerarquía y mostrando correctamente fecha y hora.
 
+----
+### 🧾 ¿Qué es `nro_vez`?
+
+La columna **`nro_vez`** indica **cuántas veces una misma orden (`ID_Limpio`) entró en modo `Preparación` durante el año** para la máquina analizada (`Renglon = 201`). Se calcula usando la función `ROW_NUMBER()` en SQL:
+
+```sql
+ROW_NUMBER() OVER (
+  PARTITION BY ID_Limpio
+  ORDER BY Inicio_Legible
+) AS nro_vez
+```
+
+---
+
+### 📌 ¿Para qué sirve?
+
+- Permite **enumerar los eventos secuenciales** de preparación para cada orden.
+- Ayuda a **detectar repeticiones**: si una orden aparece varias veces, significa que **la máquina volvió a prepararse para esa misma orden** (en distintos momentos).
+- Es clave para identificar cuál de esos eventos representa una **preparación válida** y cuáles son **repeticiones innecesarias para el cálculo de KPIs**.
+
+Esta columna se usa junto con la lógica de detección de reinicio de orden (`FlagPreparacionValida`) para evitar duplicaciones.
+
+---
+
+### 🔍 Ejemplo:
+
+| ID     | ID_Limpio | Inicio              | nro_vez | FlagPreparacionValida |
+|--------|-----------|---------------------|---------|------------------------|
+| 14292  | 14292     | 2025-01-10 02:00:34 | 1       | 1                      |
+| 14292  | 14292     | 2025-01-16 07:45:50 | 1       | 1                      |
+| 14292  | 14292     | 2025-01-16 12:04:28 | 2       | 0                      |
+| 14292  | 14292     | 2025-01-20 17:36:15 | 1       | 1                      |
+
+En este ejemplo:
+- La orden **14292** entra varias veces a máquina.
+- Cada nuevo ingreso **después de que pasó otra OT diferente**, se considera válido (`FlagPreparacionValida = 1`).
+- Si hay varios bloques seguidos para la misma orden, **solo se toma el primero como válido**.
+
+---
+
+✅ Esta lógica permite calcular el tiempo de preparación de manera realista y sin duplicaciones, reflejando correctamente el trabajo operativo en planta.
+
+
 

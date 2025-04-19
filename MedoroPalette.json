@@ -1,0 +1,19 @@
+{
+    "name": "Paleta Medoro",
+    "dataColors": [
+      "#db0433",
+      "#faebef",
+      "#d3576f",
+      "#b01e3b",
+      "#c43552",
+      "#dc848c",
+      "#c12542",
+      "#fa7c9c",
+      "#f40a3c",
+      "#d03c64"
+    ],
+    "background": "#ffffff",
+    "foreground": "#000000",
+    "tableAccent": "#db0433"
+  }
+  

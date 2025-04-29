@@ -1228,6 +1228,27 @@ Proyecto de análisis de tiempos de preparación y producción en procesos indus
 
 > Proyecto desarrollado en 2025 como parte de la optimización de indicadores de eficiencia operativa para la empresa Medoro.
 
+![M4_1](https://github.com/user-attachments/assets/6bb4f845-c523-4996-a625-c50a18720453)
+
+![M4_2](https://github.com/user-attachments/assets/a67df488-cdb1-45a5-8c4e-98cf06a0a384)
+
+![M4_3](https://github.com/user-attachments/assets/061c89b3-1d19-4905-9fa0-c8c4d83e17d8)
+
+![M4_4](https://github.com/user-attachments/assets/a76f9d36-7676-4bfe-9f06-cc64ad0f5351)
+
+![M4_5](https://github.com/user-attachments/assets/526996d8-0b9a-4c69-8fb5-eeeb433a75aa)
+
+![M4_6](https://github.com/user-attachments/assets/7bcc0dc7-45d2-48df-b343-cd1810ea9d8a)
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1201,6 +1201,32 @@ Este dashboard de Power BI analiza los tiempos de preparación y producción en 
 
 ![image](https://github.com/user-attachments/assets/49742bfd-421d-4715-8812-b7a9b6949b8d)
 
+-----------------
+
+# Proyecto Medoro 3 – Setup and Production Time Optimization (2025)
+
+**Descripción:**  
+Proyecto de análisis de tiempos de preparación y producción en procesos industriales, desarrollado para corregir inconsistencias detectadas en la medición inicial.
+
+## Mejoras implementadas:
+- **Corrección del cálculo de tiempos reales de producción** eliminando errores de duplicación y acumulación incorrecta.
+- **Ajuste de tiempos de preparación** contabilizando correctamente eventos múltiples para una misma orden.
+- **Redefinición del % de tiempo en preparación** con una fórmula más precisa basada en los tiempos reales.
+- **Reorganización de los cortes de órdenes** utilizando fechas de inicio y fin corregidas.
+- **Optimización de filtros** y visualizaciones para asegurar análisis coherentes.
+
+## Herramientas utilizadas:
+- **Power BI Desktop**
+- **Excel** (fuente de datos portable `Sheet1.xlsx`)
+- **DAX** (mejoras avanzadas en medidas y cálculos personalizados)
+
+## Notas:
+- El nuevo modelo elimina los problemas anteriores de duplicación de tiempos y desfases horarios.
+- Todo el análisis se puede reproducir directamente en Power BI sin dependencias externas.
+
+---
+
+> Proyecto desarrollado en 2025 como parte de la optimización de indicadores de eficiencia operativa para la empresa Medoro.
 
 
 

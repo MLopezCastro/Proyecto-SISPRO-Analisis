@@ -1203,7 +1203,7 @@ Este dashboard de Power BI analiza los tiempos de preparación y producción en 
 
 -----------------
 
-# Proyecto Medoro 3 – Setup and Production Time Optimization (2025)
+# Proyecto Medoro 4 – Setup and Production Time Optimization (2025)
 
 **Descripción:**  
 Proyecto de análisis de tiempos de preparación y producción en procesos industriales, desarrollado para corregir inconsistencias detectadas en la medición inicial.

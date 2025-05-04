@@ -1,0 +1,13 @@
+SELECT *
+FROM ConCubo
+WHERE DATEADD(DAY, Inicio - 2, '1900-01-01') >= '2024-01-01'
+  AND Renglon = 201;
+
+
+SELECT DISTINCT Renglon
+FROM ConCubo;
+
+SELECT DISTINCT 
+    TRY_CAST(Inicio AS FLOAT) AS ValidInicio,
+    TRY_CAST(Fin AS FLOAT) AS ValidFin
+FROM ConCubo;

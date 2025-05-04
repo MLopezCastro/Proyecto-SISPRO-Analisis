@@ -1,0 +1,9 @@
+SELECT *
+FROM ConCubo
+WHERE ISNUMERIC(Renglon) = 1
+  AND CAST(Renglon AS INT) = 201
+  AND Inicio >= CAST('2024-01-01' AS FLOAT);
+
+SELECT *
+FROM ConCubo
+WHERE TRY_CAST(Inicio AS FLOAT) IS NULL;

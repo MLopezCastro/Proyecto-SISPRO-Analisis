@@ -1,0 +1,42 @@
+SELECT * FROM ConCubo;
+
+SELECT DISTINCT Solapa FROM ConCubo;
+
+SELECT DISTINCT ID FROM ConCubo;
+
+SELECT DISTINCT Renglon FROM ConCubo;
+
+SELECT DISTINCT maquinista FROM ConCubo;
+
+SELECT TOP 10 * FROM ConCubo;
+
+SELECT TOP 10 * FROM ConArbol;
+
+SELECT DISTINCT Renglones FROM ConArbol;
+
+SELECT count(DISTINCT ID) FROM ConCubo WHERE Renglon = '201'
+
+SELECT DISTINCT Estado FROM ConCubo;
+
+SELECT TOP 100 Inicio, Fin, Estado FROM ConCubo;
+
+SELECT DISTINCT codproducto FROM ConCubo;
+
+SELECT TOP 10 * FROM TablaVinculadaUNION;
+
+SELECT DISTINCT OP FROM TablaVinculadaUNION;
+
+SELECT DISTINCT saccod1 FROM TablaVinculadaUNION;
+
+SELECT TOP 10 * FROM tablaVinculadaNEW;
+
+SELECT TOP 10 * FROM ConArbol
+
+SELECT * FROM ConArbol WHERE Renglones = '201'
+
+
+
+
+
+
+

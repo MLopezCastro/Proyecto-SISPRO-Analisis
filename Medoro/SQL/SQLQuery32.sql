@@ -1,0 +1,21 @@
+SELECT TOP 50 *
+FROM ConCubo
+WHERE Renglon = '201';
+
+SELECT TOP 50 *
+FROM ConCubo
+WHERE Renglon = '201'
+  AND Inicio >= CAST('2024-01-01' AS FLOAT);
+
+
+
+SELECT *
+FROM ConCubo
+WHERE Renglon = 201
+  AND Inicio >= CAST('2024-01-01' AS FLOAT)
+  AND TRY_CAST(Inicio AS FLOAT) IS NOT NULL
+  AND TRY_CAST(Fin AS FLOAT) IS NOT NULL;
+
+SELECT *
+FROM ConCubo
+WHERE Renglon LIKE '%Rotatek%';

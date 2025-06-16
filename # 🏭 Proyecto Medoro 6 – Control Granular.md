@@ -26,6 +26,27 @@ Se diseñó una nueva vista SQL llamada `vista_Medoro_BajaGranularidad_2025_OK`,
 
 ---
 
+## 🧪 Script SQL utilizado
+
+```sql
+CREATE VIEW vista_Medoro_BajaGranularidad_2025_OK AS
+SELECT 
+    ID,
+    ID_Limpio,
+    Renglon,
+    Tipo,
+    Inicio,
+    Fin,
+    Inicio_Corregido_Texto,
+    nro_vez,
+    HorasPreparacion_Valida_Total,
+    HorasProduccion_Total,
+    FlagPreparacion,
+    AnioInicio,
+    MesInicio
+FROM vista_MedoroResumen5_Final_2025;
+
+
 ## 🧠 Objetivo
 
 Esta vista permite crear visualizaciones de **baja granularidad** que resumen la información por cada bloque de preparación, como por ejemplo:
